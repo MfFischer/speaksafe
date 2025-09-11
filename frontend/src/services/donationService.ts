@@ -140,24 +140,14 @@ class DonationService {
 
   // Get sponsorship impact metrics
   async getSponsorshipImpact(): Promise<SponsorshipImpact> {
-    try {
-      return {
-        totalReportsEnabled: 12450,
-        corruptionExposed: 847,
-        communitiesHelped: 156,
-        averageGasCost: 0.02 // in MATIC
-      };
-    } catch (error) {
-      console.error('Failed to fetch sponsorship impact:', error);
-      // Return default values instead of throwing
-      return {
-        totalReportsEnabled: 0,
-        corruptionExposed: 0,
-        communitiesHelped: 0,
-        averageGasCost: 0
-      };
-    }
-  }
+    // In a real implementation, this would fetch from blockchain/API
+    // For now, return mock data
+    return {
+      totalReportsEnabled: 12450,
+      corruptionExposed: 847,
+      communitiesHelped: 156,
+      averageGasCost: 0.02 // in MATIC
+    };
   }
 
   // Process donation (would integrate with Web3 wallet)
