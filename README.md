@@ -81,22 +81,7 @@ SpeakSafe combines **blockchain technology**, **zero-knowledge proofs**, and **c
 - [ ] Mobile application development
 - [ ] Multi-language internationalization
 
-## 🎯 **Grant Application Focus**
 
-### Anti-Corruption Impact
-- **Transparency International** alignment with global anti-corruption goals
-- **UN SDG 16** (Peace, Justice, and Strong Institutions) contribution
-- **Regional Focus**: Designed for high-corruption environments in Asia, Africa, and Latin America
-
-### Innovation & Technology
-- **Blockchain for Social Good**: Novel application of Web3 technology
-- **Privacy-Preserving Technology**: Advanced cryptographic implementations
-- **Accessibility Innovation**: Breaking down barriers to reporting
-
-### Sustainability Model
-- **Community-Driven**: Self-sustaining through DAO governance
-- **Donation-Based**: Transparent funding through community contributions
-- **Open Source**: Ensuring long-term viability and trust
 
 ## 🌐 **Live Demo**
 
@@ -137,7 +122,8 @@ npm start
 - Legal experts in whistleblower protection
 - Grant funding organizations
 
-**Contact**: [Your Contact Information]
+**Contact**: afefischer@gmail.com
+
 
 ## 📄 **License**
 
