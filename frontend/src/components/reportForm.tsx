@@ -6,11 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Shield,
   FileText,
-  Upload,
   AlertTriangle,
   CheckCircle,
   Eye,
-  EyeOff,
   Info,
   Lock
 } from 'lucide-react';
@@ -44,7 +42,7 @@ const ReportForm: React.FC = () => {
     handleSubmit,
     watch,
     setValue,
-    formState: { errors, isValid }
+    formState: { errors }
   } = useForm<ReportFormData>({
     resolver: zodResolver(reportSchema),
     defaultValues: {

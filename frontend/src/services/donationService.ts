@@ -149,8 +149,15 @@ class DonationService {
       };
     } catch (error) {
       console.error('Failed to fetch sponsorship impact:', error);
-      throw error;
+      // Return default values instead of throwing
+      return {
+        totalReportsEnabled: 0,
+        corruptionExposed: 0,
+        communitiesHelped: 0,
+        averageGasCost: 0
+      };
     }
+  }
   }
 
   // Process donation (would integrate with Web3 wallet)
@@ -237,4 +244,5 @@ class DonationService {
   }
 }
 
-export default new DonationService();
+const donationService = new DonationService();
+export default donationService;

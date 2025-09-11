@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Accessibility, Eye, Ear, Hand, Brain, Heart, Settings, CheckCircle, AlertCircle } from 'lucide-react';
+import { Accessibility, Eye, Ear, Brain, Heart, Settings, CheckCircle, AlertCircle } from 'lucide-react';
 import Header from '../components/layout/Header';
 
 const AccessibilityPage: React.FC = () => {

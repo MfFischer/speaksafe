@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import DonationDashboard from '../components/donation/DonationDashboard';
 import DonationModal from '../components/donation/DonationModal';
 

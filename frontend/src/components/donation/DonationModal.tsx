@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
   Heart,
-  Shield,
-  Star,
   Check,
   Wallet,
   AlertCircle,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, FileText, Lock, AlertTriangle } from 'lucide-react';
 import { Layout } from '../components/layout';
