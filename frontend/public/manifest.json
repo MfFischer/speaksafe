@@ -1,0 +1,33 @@
+{
+  "short_name": "SpeakSafe",
+  "name": "SpeakSafe - Anonymous Whistleblowing Platform",
+  "description": "Report corruption safely with complete anonymity protection using blockchain technology and zero-knowledge proofs.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "speaksafe.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "speaksafe.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#7c3aed",
+  "background_color": "#1f2937",
+  "categories": ["transparency", "security", "privacy", "blockchain"],
+  "lang": "en",
+  "scope": "/",
+  "prefer_related_applications": false
+}
