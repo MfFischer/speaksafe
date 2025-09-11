@@ -1,0 +1,39 @@
+{
+  "name": "speaksafe",
+  "version": "0.1.0",
+  "description": "Anonymous whistleblowing platform powered by blockchain technology and zero-knowledge proofs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-deps": "cd frontend && npm install",
+    "deploy": "cd frontend && npm run build && vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MfFischer/speaksafe.git"
+  },
+  "keywords": [
+    "whistleblowing",
+    "blockchain",
+    "zero-knowledge-proofs",
+    "anti-corruption",
+    "transparency",
+    "privacy",
+    "dao",
+    "web3",
+    "polygon",
+    "react",
+    "typescript"
+  ],
+  "author": "MfFischer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MfFischer/speaksafe/issues"
+  },
+  "homepage": "https://github.com/MfFischer/speaksafe#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
