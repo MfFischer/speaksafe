@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 import CookieConsentModal from './components/cookieConsentModal';
 import PrivacyConsentModal from './components/privacyConsentModal';
 import LegalDisclaimer from './components/legalDisclaimer';
+import Chatbot from './components/Chatbot';
 import complianceService, { ConsentData } from './services/complianceService';
 
 function App() {
@@ -123,6 +124,8 @@ function App() {
           isOpen={showCookieConsent}
           onClose={() => setShowCookieConsent(false)}
         />
+
+        <Chatbot />
       </div>
     </Router>
   );
