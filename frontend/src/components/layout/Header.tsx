@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Shield, Home, FileText, Users, Settings } from 'lucide-react';
 import { Button } from '../ui';
 
+const W3mButton = 'w3m-button' as any;
+
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -12,6 +14,7 @@ const Header: React.FC = () => {
     { name: 'Home', href: '/', icon: Home },
     { name: 'Report', href: '/report', icon: FileText },
     { name: 'DAO', href: '/dao', icon: Users },
+    { name: 'Donate', href: '/donate', icon: Shield },
     { name: 'Settings', href: '/settings', icon: Settings },
   ];
 
@@ -23,42 +26,47 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-gradient-to-r from-accent-primary to-accent-tertiary rounded-lg group-hover:scale-110 transition-transform duration-300">
+            <div className="p-2 bg-gradient-to-r from-accent-dark to-accent-mid rounded-lg group-hover:scale-110 transition-transform duration-300">
               <Shield className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">SpeakSafe</span>
+            <span className="text-xl font-bold text-white tracking-tight">SpeakSafe</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
-            {navigation.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
-                    isActive(item.href)
-                      ? 'bg-white/10 text-white font-semibold'
-                      : 'text-text-secondary hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  <Icon size={18} />
-                  <span>{item.name}</span>
-                </Link>
-              );
-            })}
-          </nav>
+          <div className="hidden md:flex items-center gap-4">
+            <nav className="flex items-center space-x-1">
+              {navigation.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                      isActive(item.href)
+                        ? 'bg-white/10 text-white font-semibold'
+                        : 'text-text-muted hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    <Icon size={16} />
+                    <span>{item.name}</span>
+                  </Link>
+                );
+              })}
+            </nav>
+            <div className="h-6 w-[1px] bg-white/10 mx-2" />
+            <W3mButton />
+          </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-3">
+            <W3mButton />
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               icon={isMobileMenuOpen ? X : Menu}
             >
-              {isMobileMenuOpen ? 'Close' : 'Menu'}
+              {isMobileMenuOpen ? '' : ''}
             </Button>
           </div>
         </div>

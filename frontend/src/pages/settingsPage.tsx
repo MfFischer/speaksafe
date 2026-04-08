@@ -51,7 +51,7 @@ const SettingsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       {/* Header */}
       <header className="bg-gray-900/90 backdrop-blur-sm py-4 px-6 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -59,11 +59,11 @@ const SettingsPage: React.FC = () => {
             SpeakSafe
           </Link>
           <nav className="space-x-6">
-            <Link to="/" className="text-white hover:text-purple-300 transition-colors font-medium">Home</Link>
-            <Link to="/report" className="text-white hover:text-purple-300 transition-colors font-medium">Report</Link>
-            <Link to="/dao" className="text-white hover:text-purple-300 transition-colors font-medium">DAO</Link>
-            <Link to="/donate" className="text-white hover:text-purple-300 transition-colors font-medium">Donate</Link>
-            <Link to="/settings" className="text-white hover:text-purple-300 transition-colors font-semibold">Settings</Link>
+            <Link to="/" className="text-white hover:text-text-primary transition-colors font-medium">Home</Link>
+            <Link to="/report" className="text-white hover:text-text-primary transition-colors font-medium">Report</Link>
+            <Link to="/dao" className="text-white hover:text-text-primary transition-colors font-medium">DAO</Link>
+            <Link to="/donate" className="text-white hover:text-text-primary transition-colors font-medium">Donate</Link>
+            <Link to="/settings" className="text-white hover:text-text-primary transition-colors font-semibold">Settings</Link>
           </nav>
         </div>
       </header>
@@ -101,7 +101,7 @@ const SettingsPage: React.FC = () => {
                     onClick={() => setActiveTab(tab as any)}
                     className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                       activeTab === tab
-                        ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'
+                        ? 'bg-gradient-to-r from-accent-dark to-accent-mid text-white'
                         : 'text-gray-300 hover:text-white hover:bg-white/10'
                     }`}
                   >
@@ -119,13 +119,13 @@ const SettingsPage: React.FC = () => {
                 <h3 className="text-xl font-semibold text-white mb-4">Data Retention</h3>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-blue-100 mb-2">
+                    <label className="block text-text-primary mb-2">
                       How long should we keep your data? (days)
                     </label>
                     <select
                       value={privacySettings.dataRetention}
                       onChange={(e) => handlePrivacySettingsChange('dataRetention', parseInt(e.target.value))}
-                      className="w-full p-3 rounded-lg bg-blue-900/30 border border-blue-400/30 text-white"
+                      className="w-full p-3 rounded-lg bg-bg-tertiary/50 border border-white/10 text-white"
                     >
                       <option value={30}>30 days</option>
                       <option value={90}>90 days</option>
@@ -142,7 +142,7 @@ const SettingsPage: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-white font-medium">Anonymous Reporting</div>
-                      <div className="text-blue-100 text-sm">Always submit reports anonymously</div>
+                      <div className="text-text-primary text-sm">Always submit reports anonymously</div>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input
@@ -151,16 +151,16 @@ const SettingsPage: React.FC = () => {
                         onChange={(e) => handlePrivacySettingsChange('anonymousReporting', e.target.checked)}
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                      <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-mid"></div>
                     </label>
                   </div>
 
                   <div>
-                    <label className="block text-blue-100 mb-2">Encryption Level</label>
+                    <label className="block text-text-primary mb-2">Encryption Level</label>
                     <select
                       value={privacySettings.encryptionLevel}
                       onChange={(e) => handlePrivacySettingsChange('encryptionLevel', e.target.value)}
-                      className="w-full p-3 rounded-lg bg-blue-900/30 border border-blue-400/30 text-white"
+                      className="w-full p-3 rounded-lg bg-bg-tertiary/50 border border-white/10 text-white"
                     >
                       <option value="standard">Standard</option>
                       <option value="high">High (Recommended)</option>
@@ -176,7 +176,7 @@ const SettingsPage: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-white font-medium">Essential Cookies</div>
-                        <div className="text-blue-100 text-sm">Required for basic functionality</div>
+                        <div className="text-text-primary text-sm">Required for basic functionality</div>
                       </div>
                       <div className="text-green-400 font-semibold">Always On</div>
                     </div>
@@ -184,7 +184,7 @@ const SettingsPage: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-white font-medium">Analytics Cookies</div>
-                        <div className="text-blue-100 text-sm">Help us improve the platform</div>
+                        <div className="text-text-primary text-sm">Help us improve the platform</div>
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
@@ -193,7 +193,7 @@ const SettingsPage: React.FC = () => {
                           onChange={(e) => handleConsentChange('analytics', e.target.checked)}
                           className="sr-only peer"
                         />
-                        <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-mid"></div>
                       </label>
                     </div>
                   </div>
@@ -208,10 +208,10 @@ const SettingsPage: React.FC = () => {
               <div className="frosted-glass p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">Wallet Connection</h3>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 bg-blue-900/20 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
                     <div>
                       <div className="text-white font-medium">MetaMask</div>
-                      <div className="text-blue-100 text-sm">Connected: 0x1234...5678</div>
+                      <div className="text-text-primary text-sm">Connected: 0x1234...5678</div>
                     </div>
                     <button type="button" className="btn-secondary px-4 py-2 rounded-lg text-sm font-semibold">
                       Disconnect
@@ -226,7 +226,7 @@ const SettingsPage: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-white font-medium">2FA Status</div>
-                      <div className="text-blue-100 text-sm">Secure your account with 2FA</div>
+                      <div className="text-text-primary text-sm">Secure your account with 2FA</div>
                     </div>
                     <button type="button" className="btn-primary px-4 py-2 rounded-lg text-sm font-semibold">
                       Enable 2FA
@@ -238,7 +238,7 @@ const SettingsPage: React.FC = () => {
               <div className="frosted-glass p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">Session Management</h3>
                 <div className="space-y-4">
-                  <div className="text-blue-100 text-sm mb-4">
+                  <div className="text-text-primary text-sm mb-4">
                     Active sessions will be automatically logged out after 24 hours of inactivity.
                   </div>
                   <button type="button" className="btn-secondary px-4 py-2 rounded-lg text-sm font-semibold">
@@ -256,16 +256,16 @@ const SettingsPage: React.FC = () => {
                 <h3 className="text-xl font-semibold text-white mb-4">Account Information</h3>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-blue-100 mb-2">Display Name (Optional)</label>
+                    <label className="block text-text-primary mb-2">Display Name (Optional)</label>
                     <input
                       type="text"
                       placeholder="Anonymous User"
-                      className="w-full p-3 rounded-lg bg-blue-900/30 border border-blue-400/30 text-white placeholder-blue-300"
+                      className="w-full p-3 rounded-lg bg-bg-tertiary/50 border border-white/10 text-white placeholder-blue-300"
                     />
                   </div>
                   <div>
-                    <label className="block text-blue-100 mb-2">Preferred Language</label>
-                    <select className="w-full p-3 rounded-lg bg-blue-900/30 border border-blue-400/30 text-white">
+                    <label className="block text-text-primary mb-2">Preferred Language</label>
+                    <select className="w-full p-3 rounded-lg bg-bg-tertiary/50 border border-white/10 text-white">
                       <option value="en">English</option>
                       <option value="id">Bahasa Indonesia</option>
                       <option value="tl">Tagalog</option>
@@ -291,7 +291,7 @@ const SettingsPage: React.FC = () => {
               <div className="frosted-glass p-6 border border-red-400/30">
                 <h3 className="text-xl font-semibold text-red-400 mb-4">Danger Zone</h3>
                 <div className="space-y-4">
-                  <div className="text-blue-100 text-sm mb-4">
+                  <div className="text-text-primary text-sm mb-4">
                     Once you delete your account, there is no going back. Please be certain.
                   </div>
                   <button

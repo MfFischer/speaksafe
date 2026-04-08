@@ -5,7 +5,7 @@ import Header from '../components/layout/Header';
 
 const TermsOfServicePage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       <Header />
       
       <div className="container mx-auto px-4 py-24">
@@ -21,9 +21,9 @@ const TermsOfServicePage: React.FC = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center justify-center w-16 h-16 bg-purple-600/20 rounded-full mb-6"
+              className="inline-flex items-center justify-center w-16 h-16 bg-white/5 rounded-full mb-6"
             >
-              <Scale className="w-8 h-8 text-purple-400" />
+              <Scale className="w-8 h-8 text-accent-bright" />
             </motion.div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Terms of Service
@@ -42,7 +42,7 @@ const TermsOfServicePage: React.FC = () => {
             {/* 1. Acceptance of Terms */}
             <section>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <FileText className="w-6 h-6 text-purple-400" />
+                <FileText className="w-6 h-6 text-accent-bright" />
                 1. Acceptance of Terms
               </h2>
               <div className="text-gray-300 space-y-4">
@@ -58,7 +58,7 @@ const TermsOfServicePage: React.FC = () => {
             {/* 2. Use License */}
             <section>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <Shield className="w-6 h-6 text-blue-400" />
+                <Shield className="w-6 h-6 text-accent-bright" />
                 2. Use License
               </h2>
               <div className="text-gray-300 space-y-4">
@@ -150,7 +150,7 @@ const TermsOfServicePage: React.FC = () => {
             </section>
 
             {/* Contact Information */}
-            <div className="bg-purple-600/10 rounded-xl p-6 border border-purple-500/20">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
               <h3 className="text-xl font-bold text-white mb-3">Questions About These Terms?</h3>
               <p className="text-gray-300 mb-4">
                 If you have any questions about these Terms of Service, please contact us:

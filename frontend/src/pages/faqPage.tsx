@@ -103,21 +103,21 @@ const FAQPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       {/* Header */}
-      <header className="bg-gray-900/90 backdrop-blur-sm border-b border-purple-500/30 sticky top-0 z-50">
+      <header className="bg-gray-900/90 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <Link to="/" className="text-2xl font-bold text-accent-bright bg-clip-text text-transparent">
               SpeakSafe
             </Link>
             <nav className="hidden md:flex space-x-8">
-              <Link to="/" className="text-white hover:text-purple-300 transition-colors font-medium">Home</Link>
-              <Link to="/report" className="text-white hover:text-purple-300 transition-colors font-medium">Report</Link>
-              <Link to="/dao" className="text-white hover:text-purple-300 transition-colors font-medium">DAO</Link>
-              <Link to="/donate" className="text-white hover:text-purple-300 transition-colors font-medium">Donate</Link>
-              <Link to="/faq" className="text-white hover:text-purple-300 transition-colors font-semibold">FAQ</Link>
-              <Link to="/settings" className="text-white hover:text-purple-300 transition-colors font-medium">Settings</Link>
+              <Link to="/" className="text-white hover:text-text-primary transition-colors font-medium">Home</Link>
+              <Link to="/report" className="text-white hover:text-text-primary transition-colors font-medium">Report</Link>
+              <Link to="/dao" className="text-white hover:text-text-primary transition-colors font-medium">DAO</Link>
+              <Link to="/donate" className="text-white hover:text-text-primary transition-colors font-medium">Donate</Link>
+              <Link to="/faq" className="text-white hover:text-text-primary transition-colors font-semibold">FAQ</Link>
+              <Link to="/settings" className="text-white hover:text-text-primary transition-colors font-medium">Settings</Link>
             </nav>
           </div>
         </div>
@@ -131,11 +131,11 @@ const FAQPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full mb-6">
-              <HelpCircle className="w-5 h-5 text-purple-300" />
-              <span className="text-purple-300 font-medium">Frequently Asked Questions</span>
+            <div className="inline-flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full mb-6">
+              <HelpCircle className="w-5 h-5 text-text-primary" />
+              <span className="text-text-primary font-medium">Frequently Asked Questions</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white bg-clip-text text-transparent">
               Got Questions?
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -160,7 +160,7 @@ const FAQPage: React.FC = () => {
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeCategory === category
-                    ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30'
+                    ? 'bg-accent-mid text-white shadow-lg shadow-purple-600/30'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
                 }`}
               >
@@ -193,15 +193,15 @@ const FAQPage: React.FC = () => {
                   className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="text-purple-400">
+                    <div className="text-accent-bright">
                       {item.icon}
                     </div>
                     <div>
-                      <div className="text-sm text-purple-300 mb-1">{item.category}</div>
+                      <div className="text-sm text-text-primary mb-1">{item.category}</div>
                       <h3 className="text-lg font-semibold text-white">{item.question}</h3>
                     </div>
                   </div>
-                  <div className="text-purple-400">
+                  <div className="text-accent-bright">
                     {openItems.includes(item.id) ? <ChevronUp /> : <ChevronDown />}
                   </div>
                 </button>
@@ -230,7 +230,7 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-6 bg-gradient-to-r from-purple-600/10 to-blue-600/10">
+      <section className="py-16 px-6 bg-gradient-to-r from-bg-tertiary/50 to-bg-accent/50 border-t border-white/5">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

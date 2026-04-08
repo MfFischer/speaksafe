@@ -95,7 +95,7 @@ const Chatbot: React.FC = () => {
         className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
           isOpen 
             ? 'bg-red-600 hover:bg-red-700' 
-            : 'bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700'
+            : 'bg-gradient-to-r from-accent-dark to-accent-mid hover:from-accent-dark hover:to-accent-mid'
         }`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -121,7 +121,7 @@ const Chatbot: React.FC = () => {
             className="fixed bottom-24 right-6 z-40 w-96 max-w-[calc(100vw-3rem)] bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-violet-600 to-purple-600 p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-accent-dark to-accent-mid p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                   <Bot className="w-5 h-5 text-white" />
@@ -158,7 +158,7 @@ const Chatbot: React.FC = () => {
                       }`}
                     >
                       {message.isBot && (
-                        <div className="w-8 h-8 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <div className="w-8 h-8 bg-gradient-to-r from-accent-dark to-accent-mid rounded-full flex items-center justify-center flex-shrink-0">
                           <Bot className="w-4 h-4 text-white" />
                         </div>
                       )}
@@ -167,7 +167,7 @@ const Chatbot: React.FC = () => {
                         className={`max-w-[80%] p-3 rounded-2xl ${
                           message.isBot
                             ? 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
-                            : 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'
+                            : 'bg-gradient-to-r from-accent-dark to-accent-mid text-white'
                         }`}
                       >
                         <p className="text-sm leading-relaxed">{message.text}</p>
@@ -190,7 +190,7 @@ const Chatbot: React.FC = () => {
                   {/* Typing Indicator */}
                   {isTyping && (
                     <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gradient-to-r from-accent-dark to-accent-mid rounded-full flex items-center justify-center">
                         <Bot className="w-4 h-4 text-white" />
                       </div>
                       <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-2xl">
@@ -216,13 +216,13 @@ const Chatbot: React.FC = () => {
                       onChange={(e) => setInputValue(e.target.value)}
                       onKeyPress={handleKeyPress}
                       placeholder="Ask me anything about SpeakSafe..."
-                      className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-full bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                      className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-full bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-accent-mid focus:border-transparent"
                       disabled={isTyping}
                     />
                     <button
                       onClick={handleSendMessage}
                       disabled={!inputValue.trim() || isTyping}
-                      className="w-10 h-10 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-200"
+                      className="w-10 h-10 bg-gradient-to-r from-accent-dark to-accent-mid hover:from-accent-dark hover:to-accent-mid disabled:opacity-50 disabled:cursor-not-allowed rounded-full flex items-center justify-center transition-all duration-200"
                     >
                       <Send className="w-4 h-4 text-white" />
                     </button>

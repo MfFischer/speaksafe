@@ -38,7 +38,7 @@ const Switch: React.FC<SwitchProps> = ({
       )}
       
       <SwitchPrimitive.Root
-        className={`${sizeClasses[size].root} bg-white/20 rounded-full relative data-[state=checked]:bg-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300`}
+        className={`${sizeClasses[size].root} bg-white/20 rounded-full relative data-[state=checked]:bg-accent-mid focus:outline-none focus:ring-2 focus:ring-accent-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300`}
         checked={checked}
         onCheckedChange={onCheckedChange}
         disabled={disabled}

@@ -9,6 +9,9 @@ import {
   Loader,
   Gift
 } from 'lucide-react';
+import { useWriteContract } from 'wagmi';
+import { parseEther } from 'viem';
+import { CONTRACT_ADDRESSES, TREASURY_ABI } from '../../constants/contracts';
 import donationService, { DonationTier } from '../../services/donationService';
 
 interface DonationModalProps {
@@ -74,28 +77,38 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose, onSucces
     setStep('confirm');
   };
 
+  const { writeContractAsync: donateOnChain } = useWriteContract();
+
   const confirmDonation = async () => {
     setStep('processing');
     setIsProcessing(true);
     setError('');
 
     try {
-      const result = await donationService.processDonation(
-        getSelectedAmount(),
-        'MATIC',
-        message || undefined,
-        isAnonymous
-      );
+      const amount = getSelectedAmount();
+      
+      // Real blockchain transaction
+      await donateOnChain({
+        address: CONTRACT_ADDRESSES.treasury,
+        abi: TREASURY_ABI,
+        functionName: 'donate',
+        args: [
+          0, // General purpose
+          '0x0000000000000000000000000000000000000000000000000000000000000000', // No specific report
+          message || '',
+          isAnonymous,
+          false, // Not recurring for now
+          BigInt(0)
+        ],
+        value: parseEther(amount.toString())
+      } as any);
 
-      if (result.success) {
-        setStep('success');
-        onSuccess?.(getSelectedAmount(), 'MATIC');
-      } else {
-        setError(result.error || 'Transaction failed');
-        setStep('confirm');
-      }
-    } catch (err) {
-      setError('Failed to process donation. Please try again.');
+      setStep('success');
+      onSuccess?.(amount, 'MATIC');
+      
+    } catch (err: any) {
+      console.error('Donation error:', err);
+      setError(err.message || 'Failed to process donation. Please try again.');
       setStep('confirm');
     } finally {
       setIsProcessing(false);
@@ -138,7 +151,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose, onSucces
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-accent-dark to-accent-mid rounded-full flex items-center justify-center">
                 <Heart className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -169,13 +182,13 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose, onSucces
                         onClick={() => handleTierSelect(tier)}
                         className={`relative p-4 rounded-xl border-2 cursor-pointer transition-all ${
                           selectedTier?.name === tier.name
-                            ? 'border-purple-500 bg-purple-500/10'
+                            ? 'border-purple-500 bg-white/5'
                             : 'border-white/20 bg-white/5 hover:border-white/30'
                         }`}
                       >
                         {tier.popular && (
                           <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                            <div className="bg-gradient-to-r from-purple-500 to-blue-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                            <div className="bg-gradient-to-r from-accent-dark to-accent-mid text-white text-xs px-3 py-1 rounded-full font-semibold">
                               Most Popular
                             </div>
                           </div>
@@ -185,7 +198,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose, onSucces
                           <div className="text-2xl font-bold text-white mb-1">
                             {tier.amount} {tier.currency}
                           </div>
-                          <div className="text-purple-400 font-semibold mb-2">{tier.name}</div>
+                          <div className="text-accent-bright font-semibold mb-2">{tier.name}</div>
                           <div className="text-green-400 text-sm mb-3">
                             Sponsors {tier.reportsSponsored} reports
                           </div>
@@ -249,7 +262,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose, onSucces
                     id="anonymous"
                     checked={isAnonymous}
                     onChange={(e) => setIsAnonymous(e.target.checked)}
-                    className="w-4 h-4 text-purple-600 bg-gray-700 border-gray-600 rounded focus:ring-purple-500"
+                    className="w-4 h-4 text-accent-bright bg-gray-700 border-gray-600 rounded focus:ring-accent-mid"
                   />
                   <label htmlFor="anonymous" className="text-gray-300">
                     Make this donation anonymous
@@ -276,7 +289,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose, onSucces
             {step === 'confirm' && (
               <div className="space-y-6">
                 <div className="text-center">
-                  <Gift className="w-16 h-16 text-purple-400 mx-auto mb-4" />
+                  <Gift className="w-16 h-16 text-accent-bright mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-white mb-2">Confirm Your Donation</h3>
                   <p className="text-gray-300">Review your donation details</p>
                 </div>
@@ -329,7 +342,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose, onSucces
 
             {step === 'processing' && (
               <div className="text-center py-12">
-                <Loader className="w-16 h-16 text-purple-400 mx-auto mb-4 animate-spin" />
+                <Loader className="w-16 h-16 text-accent-bright mx-auto mb-4 animate-spin" />
                 <h3 className="text-2xl font-bold text-white mb-2">Processing Donation</h3>
                 <p className="text-gray-300">Please confirm the transaction in your wallet...</p>
               </div>

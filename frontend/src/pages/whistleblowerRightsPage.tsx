@@ -48,7 +48,7 @@ const WhistleblowerRightsPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       <Header />
       
       <div className="container mx-auto px-4 py-24">
@@ -84,7 +84,7 @@ const WhistleblowerRightsPage: React.FC = () => {
             className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-              <Scale className="w-8 h-8 text-blue-400" />
+              <Scale className="w-8 h-8 text-accent-bright" />
               Your Fundamental Rights
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -95,15 +95,15 @@ const WhistleblowerRightsPage: React.FC = () => {
                   Legal protection against firing, demotion, harassment, or other forms of workplace retaliation.
                 </p>
               </div>
-              <div className="bg-blue-600/10 rounded-xl p-6 border border-blue-500/20">
-                <Shield className="w-8 h-8 text-blue-400 mb-4" />
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <Shield className="w-8 h-8 text-accent-bright mb-4" />
                 <h3 className="text-lg font-bold text-white mb-3">Confidentiality</h3>
                 <p className="text-gray-300 text-sm">
                   Right to have your identity protected and to report anonymously where legally permitted.
                 </p>
               </div>
-              <div className="bg-purple-600/10 rounded-xl p-6 border border-purple-500/20">
-                <Users className="w-8 h-8 text-purple-400 mb-4" />
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <Users className="w-8 h-8 text-accent-bright mb-4" />
                 <h3 className="text-lg font-bold text-white mb-3">Legal Support</h3>
                 <p className="text-gray-300 text-sm">
                   Access to legal representation and support throughout the reporting and investigation process.
@@ -123,8 +123,8 @@ const WhistleblowerRightsPage: React.FC = () => {
                   Right to compensation and remedies if you suffer retaliation for making a protected disclosure.
                 </p>
               </div>
-              <div className="bg-indigo-600/10 rounded-xl p-6 border border-indigo-500/20">
-                <Globe className="w-8 h-8 text-indigo-400 mb-4" />
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <Globe className="w-8 h-8 text-accent-bright mb-4" />
                 <h3 className="text-lg font-bold text-white mb-3">International Protection</h3>
                 <p className="text-gray-300 text-sm">
                   Growing international recognition and protection for whistleblowers across jurisdictions.
@@ -150,7 +150,7 @@ const WhistleblowerRightsPage: React.FC = () => {
                   className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6"
                 >
                   <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
-                    <Globe className="w-6 h-6 text-blue-400" />
+                    <Globe className="w-6 h-6 text-accent-bright" />
                     {region.region}
                   </h3>
                   <div className="space-y-4">
@@ -256,35 +256,35 @@ const WhistleblowerRightsPage: React.FC = () => {
             </h2>
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-accent-mid rounded-full flex items-center justify-center text-white font-bold">1</div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-2">Document Everything</h3>
                   <p className="text-gray-300">Keep detailed records of the wrongdoing, including dates, times, people involved, and any evidence.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-accent-mid rounded-full flex items-center justify-center text-white font-bold">2</div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-2">Know Your Rights</h3>
                   <p className="text-gray-300">Research the whistleblower protection laws in your jurisdiction and understand what protections apply to you.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-accent-mid rounded-full flex items-center justify-center text-white font-bold">3</div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-2">Seek Legal Advice</h3>
                   <p className="text-gray-300">Consult with a lawyer who specializes in whistleblower protection before making your disclosure.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">4</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-accent-mid rounded-full flex items-center justify-center text-white font-bold">4</div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-2">Follow Proper Channels</h3>
                   <p className="text-gray-300">Use established reporting procedures when possible, or use secure platforms like SpeakSafe for anonymous reporting.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">5</div>
+                <div className="flex-shrink-0 w-8 h-8 bg-accent-mid rounded-full flex items-center justify-center text-white font-bold">5</div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-2">Protect Your Identity</h3>
                   <p className="text-gray-300">Use secure communication methods and consider anonymous reporting options to protect yourself from retaliation.</p>
@@ -304,9 +304,9 @@ const WhistleblowerRightsPage: React.FC = () => {
               Additional Resources by Region
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-blue-600/10 rounded-xl p-6 border border-blue-500/20">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-3">
-                  <Globe className="w-5 h-5 text-blue-400" />
+                  <Globe className="w-5 h-5 text-accent-bright" />
                   North America
                 </h3>
                 <ul className="space-y-2 text-gray-300 text-sm">
@@ -332,9 +332,9 @@ const WhistleblowerRightsPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="bg-purple-600/10 rounded-xl p-6 border border-purple-500/20">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-3">
-                  <Globe className="w-5 h-5 text-purple-400" />
+                  <Globe className="w-5 h-5 text-accent-bright" />
                   Asia-Pacific
                 </h3>
                 <ul className="space-y-2 text-gray-300 text-sm">
@@ -374,9 +374,9 @@ const WhistleblowerRightsPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="bg-indigo-600/10 rounded-xl p-6 border border-indigo-500/20">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-indigo-400" />
+                  <Shield className="w-5 h-5 text-accent-bright" />
                   Support Networks
                 </h3>
                 <ul className="space-y-2 text-gray-300 text-sm">

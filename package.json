@@ -4,9 +4,11 @@
   "description": "Anonymous whistleblowing platform powered by blockchain technology and zero-knowledge proofs",
   "main": "index.js",
   "scripts": {
-    "dev": "cd frontend && npm start",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
     "build": "cd frontend && npm run build",
-    "install-deps": "cd frontend && npm install",
+    "install-deps": "npm install && cd frontend && npm install && cd ../backend && npm install",
     "deploy": "cd frontend && npm run build && vercel --prod"
   },
   "repository": {
@@ -35,5 +37,8 @@
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

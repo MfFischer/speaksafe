@@ -18,7 +18,7 @@ const AccessibilityPage: React.FC = () => {
       ]
     },
     {
-      icon: <Settings className="w-8 h-8 text-blue-400" />,
+      icon: <Settings className="w-8 h-8 text-accent-bright" />,
       title: "Partially Implemented",
       features: [
         "Form labels and error messages",
@@ -43,7 +43,7 @@ const AccessibilityPage: React.FC = () => {
       ]
     },
     {
-      icon: <Ear className="w-8 h-8 text-purple-400" />,
+      icon: <Ear className="w-8 h-8 text-accent-bright" />,
       title: "Auditory & Motor (Planned)",
       features: [
         "Enhanced keyboard navigation shortcuts",
@@ -67,7 +67,7 @@ const AccessibilityPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       <Header />
       
       <div className="container mx-auto px-4 py-24">
@@ -83,9 +83,9 @@ const AccessibilityPage: React.FC = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center justify-center w-20 h-20 bg-blue-600/20 rounded-full mb-8"
+              className="inline-flex items-center justify-center w-20 h-20 bg-white/5 rounded-full mb-8"
             >
-              <Accessibility className="w-10 h-10 text-blue-400" />
+              <Accessibility className="w-10 h-10 text-accent-bright" />
             </motion.div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Accessibility
@@ -225,7 +225,7 @@ const AccessibilityPage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-purple-400 mb-4">🎯 Target Timeline</h3>
+                <h3 className="text-xl font-bold text-accent-bright mb-4">🎯 Target Timeline</h3>
                 <ul className="space-y-2 text-gray-300">
                   <li>• Q1 2024: Basic compliance</li>
                   <li>• Q2 2024: Enhanced features</li>
@@ -245,7 +245,7 @@ const AccessibilityPage: React.FC = () => {
             className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 mb-12"
           >
             <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-              <Settings className="w-8 h-8 text-blue-400" />
+              <Settings className="w-8 h-8 text-accent-bright" />
               Assistive Technology Support Status
             </h2>
             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -268,7 +268,7 @@ const AccessibilityPage: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <div className="bg-blue-600/10 rounded-xl p-6 border border-blue-500/20">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
               <h3 className="text-lg font-bold text-white mb-3">📋 Planned Support</h3>
               <div className="grid md:grid-cols-3 gap-4">
                 <div>
@@ -362,7 +362,7 @@ const AccessibilityPage: React.FC = () => {
             transition={{ delay: 1.3, duration: 0.8 }}
             className="grid md:grid-cols-2 gap-8"
           >
-            <div className="bg-blue-600/10 rounded-xl p-6 border border-blue-500/20">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
               <h3 className="text-xl font-bold text-white mb-4">
                 Accessibility Feedback
               </h3>
@@ -394,7 +394,7 @@ const AccessibilityPage: React.FC = () => {
           </motion.section>
 
           {/* Ongoing Commitment */}
-          <div className="bg-purple-600/10 rounded-xl p-6 border border-purple-500/20 mt-12">
+          <div className="bg-white/5 rounded-xl p-6 border border-white/10 mt-12">
             <h3 className="text-xl font-bold text-white mb-3">
               Our Ongoing Commitment
             </h3>

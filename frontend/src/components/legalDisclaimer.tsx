@@ -69,14 +69,14 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
       title: 'Platform Disclaimer',
       content: (
         <div className="space-y-4">
-          <p className="text-blue-100">
+          <p className="text-text-primary">
             SpeakSafe is a decentralized platform designed to facilitate anonymous reporting of corruption, 
             fraud, and misconduct. While we employ advanced cryptographic techniques to protect user anonymity, 
             we cannot guarantee absolute anonymity or protection from all forms of retaliation.
           </p>
           <div className="frosted-glass p-4">
             <h4 className="font-semibold text-white mb-2">Technical Limitations:</h4>
-            <ul className="text-blue-100 text-sm space-y-1">
+            <ul className="text-text-primary text-sm space-y-1">
               <li>• Blockchain transactions may be subject to network analysis</li>
               <li>• Internet service providers may log connection data</li>
               <li>• Device fingerprinting and other tracking methods exist</li>
@@ -92,7 +92,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
         <div className="space-y-4">
           <div className="frosted-glass p-4 border border-yellow-400/30">
             <h4 className="font-semibold text-yellow-400 mb-2">{regionalContent.title}</h4>
-            <ul className="text-blue-100 text-sm space-y-2">
+            <ul className="text-text-primary text-sm space-y-2">
               {regionalContent.warnings.map((warning, index) => (
                 <li key={index} className="flex items-start space-x-2">
                   <span className="text-yellow-400 mt-1">⚠️</span>
@@ -103,7 +103,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
           </div>
           <div className="frosted-glass p-4">
             <h4 className="font-semibold text-white mb-2">General Risks:</h4>
-            <ul className="text-blue-100 text-sm space-y-1">
+            <ul className="text-text-primary text-sm space-y-1">
               <li>• Employment termination or demotion</li>
               <li>• Legal intimidation or harassment</li>
               <li>• Social ostracism or reputation damage</li>
@@ -118,11 +118,11 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
       title: 'User Responsibilities',
       content: (
         <div className="space-y-4">
-          <p className="text-blue-100">
+          <p className="text-text-primary">
             By using SpeakSafe, you acknowledge that you are solely responsible for:
           </p>
           <div className="frosted-glass p-4">
-            <ul className="text-blue-100 text-sm space-y-2">
+            <ul className="text-text-primary text-sm space-y-2">
               <li>• Ensuring the accuracy and truthfulness of your reports</li>
               <li>• Understanding local laws and regulations regarding whistleblowing</li>
               <li>• Assessing personal risks before submitting reports</li>
@@ -133,7 +133,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
           </div>
           <div className="frosted-glass p-4 border border-red-400/30">
             <h4 className="font-semibold text-red-400 mb-2">Prohibited Uses:</h4>
-            <ul className="text-blue-100 text-sm space-y-1">
+            <ul className="text-text-primary text-sm space-y-1">
               <li>• Submitting false or misleading information</li>
               <li>• Personal vendettas or harassment</li>
               <li>• Violation of attorney-client or other privileged communications</li>
@@ -149,7 +149,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
         <div className="space-y-4">
           <div className="frosted-glass p-4">
             <h4 className="font-semibold text-white mb-2">SpeakSafe and its operators:</h4>
-            <ul className="text-blue-100 text-sm space-y-2">
+            <ul className="text-text-primary text-sm space-y-2">
               <li>• Cannot guarantee protection from legal or physical retaliation</li>
               <li>• Are not responsible for consequences of your reports</li>
               <li>• Cannot provide legal advice or representation</li>
@@ -157,7 +157,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
               <li>• Cannot control how authorities or organizations respond to reports</li>
             </ul>
           </div>
-          <p className="text-blue-100 text-sm">
+          <p className="text-text-primary text-sm">
             <strong>This platform is provided "as is" without warranties of any kind.</strong> Users assume 
             all risks associated with whistleblowing activities. We strongly recommend consulting with 
             qualified legal professionals before submitting reports that could have significant legal implications.
@@ -171,7 +171,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
         <div className="space-y-4">
           <div className="frosted-glass p-4 border border-red-400/30">
             <h4 className="font-semibold text-red-400 mb-2">⚠️ If You Are in Immediate Danger:</h4>
-            <ul className="text-blue-100 text-sm space-y-2">
+            <ul className="text-text-primary text-sm space-y-2">
               <li>• Contact local emergency services immediately</li>
               <li>• Reach out to human rights organizations</li>
               <li>• Consider seeking asylum or protection if necessary</li>
@@ -180,7 +180,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
           </div>
           <div className="frosted-glass p-4">
             <h4 className="font-semibold text-white mb-2">Emergency Contacts:</h4>
-            <ul className="text-blue-100 text-sm space-y-1">
+            <ul className="text-text-primary text-sm space-y-1">
               <li>• International: UN Human Rights Office (+41-22-917-9000)</li>
               <li>• Transparency International (+49-30-34-38-200)</li>
               <li>• Local human rights organizations</li>
@@ -199,7 +199,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
           <h2 className="text-2xl font-bold text-white">Legal Disclaimer & Risk Warning</h2>
           <button
             onClick={onClose}
-            className="text-white hover:text-blue-200 text-2xl font-bold"
+            className="text-white hover:text-text-primary text-2xl font-bold"
           >
             ×
           </button>
@@ -214,7 +214,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
               className={`px-3 py-1 rounded-lg text-sm font-semibold transition-all ${
                 currentSection === index
                   ? 'btn-primary-gradient text-white'
-                  : 'text-blue-100 hover:text-white hover:bg-blue-500/20'
+                  : 'text-text-primary hover:text-white hover:bg-white/5'
               }`}
             >
               {index + 1}. {section.title}
@@ -235,7 +235,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
         </div>
 
         {/* Navigation and Actions */}
-        <div className="flex justify-between items-center pt-4 border-t border-blue-400/20">
+        <div className="flex justify-between items-center pt-4 border-t border-white/10">
           <div className="flex space-x-2">
             <button
               onClick={() => setCurrentSection(Math.max(0, currentSection - 1))}
@@ -256,7 +256,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
           <div className="flex space-x-2">
             <button
               onClick={onClose}
-              className="text-blue-100 hover:text-white px-4 py-2 text-sm font-semibold"
+              className="text-text-primary hover:text-white px-4 py-2 text-sm font-semibold"
             >
               Cancel
             </button>
@@ -270,7 +270,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({
         </div>
 
         <div className="text-center mt-4">
-          <p className="text-blue-100 text-xs">
+          <p className="text-text-primary text-xs">
             By proceeding, you acknowledge that you have read, understood, and accept these terms and risks.
           </p>
         </div>

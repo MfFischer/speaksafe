@@ -47,18 +47,18 @@ const PrivacyPolicyPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       {/* Header */}
-      <header className="bg-gray-900/90 backdrop-blur-sm border-b border-purple-500/30 sticky top-0 z-50">
+      <header className="bg-gray-900/90 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <Link to="/" className="text-2xl font-bold text-accent-bright bg-clip-text text-transparent">
               SpeakSafe
             </Link>
             <nav className="hidden md:flex space-x-8">
-              <Link to="/" className="text-white hover:text-purple-300 transition-colors font-medium">Home</Link>
-              <Link to="/contact" className="text-white hover:text-purple-300 transition-colors font-medium">Contact</Link>
-              <Link to="/faq" className="text-white hover:text-purple-300 transition-colors font-medium">FAQ</Link>
+              <Link to="/" className="text-white hover:text-text-primary transition-colors font-medium">Home</Link>
+              <Link to="/contact" className="text-white hover:text-text-primary transition-colors font-medium">Contact</Link>
+              <Link to="/faq" className="text-white hover:text-text-primary transition-colors font-medium">FAQ</Link>
             </nav>
           </div>
         </div>
@@ -73,11 +73,11 @@ const PrivacyPolicyPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full mb-6">
-              <Shield className="w-5 h-5 text-purple-300" />
-              <span className="text-purple-300 font-medium">GDPR Compliant</span>
+            <div className="inline-flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full mb-6">
+              <Shield className="w-5 h-5 text-text-primary" />
+              <span className="text-text-primary font-medium">GDPR Compliant</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white bg-clip-text text-transparent">
               Privacy Policy
             </h1>
             <div className="flex items-center justify-center gap-2 text-gray-400 mb-8">
@@ -94,7 +94,7 @@ const PrivacyPolicyPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card p-8 mb-12 bg-gradient-to-r from-green-600/10 to-blue-600/10 border-green-500/30"
+            className="glass-card p-8 mb-12 bg-gradient-to-r from-bg-tertiary/50 to-bg-accent/50 border-green-500/30"
           >
             <h2 className="text-2xl font-bold text-white mb-4">Privacy at a Glance</h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -106,15 +106,15 @@ const PrivacyPolicyPage: React.FC = () => {
                 <p className="text-gray-300 text-sm">We cannot identify you, even if we wanted to</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Lock className="w-6 h-6 text-blue-400" />
+                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Lock className="w-6 h-6 text-accent-bright" />
                 </div>
                 <h3 className="font-semibold text-white mb-2">Encrypted</h3>
                 <p className="text-gray-300 text-sm">All data encrypted end-to-end</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Database className="w-6 h-6 text-purple-400" />
+                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Database className="w-6 h-6 text-accent-bright" />
                 </div>
                 <h3 className="font-semibold text-white mb-2">Minimal Data</h3>
                 <p className="text-gray-300 text-sm">We collect only what's absolutely necessary</p>
@@ -133,7 +133,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 className="glass-card p-8"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-purple-500/20 rounded-full text-purple-400">
+                  <div className="p-3 bg-white/5 rounded-full text-accent-bright">
                     {section.icon}
                   </div>
                   <h2 className="text-2xl font-bold text-white">{section.title}</h2>
@@ -149,7 +149,7 @@ const PrivacyPolicyPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="glass-card p-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10 border-blue-500/30"
+              className="glass-card p-8 bg-gradient-to-r from-bg-tertiary/50 to-bg-accent/50 border-white/10"
             >
               <h2 className="text-2xl font-bold text-white mb-6">Your GDPR Rights</h2>
               <div className="grid md:grid-cols-2 gap-6">
@@ -169,9 +169,9 @@ const PrivacyPolicyPage: React.FC = () => {
                   <p className="text-gray-300 mb-4">
                     Contact our Data Protection Officer at:
                   </p>
-                  <div className="flex items-center gap-2 text-purple-300">
+                  <div className="flex items-center gap-2 text-text-primary">
                     <Mail className="w-4 h-4" />
-                    <a href="mailto:privacy@speaksafe.org" className="hover:text-purple-200">
+                    <a href="mailto:privacy@speaksafe.org" className="hover:text-text-primary">
                       privacy@speaksafe.org
                     </a>
                   </div>

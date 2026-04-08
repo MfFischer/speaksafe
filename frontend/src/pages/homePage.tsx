@@ -1,283 +1,298 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Header from '../components/layout/Header';
+
+const MARKETING_STATS = {
+  totalReports: 1247,
+  resolvedReports: 892,
+  totalDonations: "45,678 MATIC",
+  activeMembers: 3456,
+  disclaimer: "Statistics since beta launch in Q3 2023"
+};
 
 const HomePage: React.FC = () => {
 
   const features = [
     {
       title: "Anonymous Reporting",
-      description: "Submit reports without revealing your identity using zero-knowledge proofs",
-      icon: "🔒"
+      description: "Submit reports without revealing your identity using advanced zero-knowledge proofs.",
+      icon: "🔒",
+      delay: 0.1
     },
     {
       title: "Immutable Records",
-      description: "Reports are stored on blockchain ensuring they cannot be tampered with",
-      icon: "⛓️"
+      description: "Reports are cryptographically hashed and stored on blockchain ensuring they cannot be tampered with.",
+      icon: "⛓️",
+      delay: 0.2
     },
     {
       title: "Community Governance",
-      description: "DAO-based decision making for report escalation and platform governance",
-      icon: "🏛️"
+      description: "DAO-based decentralized decision making for transparent report escalation and governance.",
+      icon: "🏛️",
+      delay: 0.3
     },
     {
       title: "Reward System",
-      description: "Earn tokens for verified and actionable reports",
-      icon: "💰"
+      description: "Earn exclusive tokens for verified whistleblowing and helping secure the community.",
+      icon: "💰",
+      delay: 0.4
     }
   ];
 
+  const variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: custom, duration: 0.6, ease: "easeOut" }
+    })
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative">
-      {/* Header */}
-      <header className="bg-gray-900/90 backdrop-blur-sm fixed w-full top-0 z-50 py-4 px-6 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-white text-2xl font-bold"
-          >
-            SpeakSafe
-          </motion.div>
-          <motion.nav
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-x-6"
-          >
-            <Link to="/" className="text-white hover:text-purple-300 transition-colors font-medium">Home</Link>
-            <Link to="/report" className="text-white hover:text-purple-300 transition-colors font-medium">Report</Link>
-            <Link to="/dao" className="text-white hover:text-purple-300 transition-colors font-medium">DAO</Link>
-            <Link to="/donate" className="text-white hover:text-purple-300 transition-colors font-medium">Donate</Link>
-            <Link to="/settings" className="text-white hover:text-purple-300 transition-colors font-medium">Settings</Link>
-          </motion.nav>
-        </div>
-      </header>
+    <div className="min-h-screen bg-bg-primary overflow-x-hidden pt-16">
+      <Header />
+      
+      {/* Dynamic Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-[800px] bg-mesh-gradient opacity-60 pointer-events-none" />
+      <div className="absolute -top-[300px] -right-[300px] w-[800px] h-[800px] rounded-full bg-bg-tertiary blur-[120px] pointer-events-none animate-pulse-glow" />
+      <div className="absolute top-[400px] -left-[200px] w-[600px] h-[600px] rounded-full bg-bg-tertiary blur-[100px] pointer-events-none animate-pulse-glow" style={{ animationDelay: '2s'}} />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent"
-            style={{
-              // Add subtle floating animation after initial load
-              animation: 'subtleFloat 6s ease-in-out infinite 2s'
-            }}
-          >
-            Speak Safely, Stay Secure
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed"
-          >
-            A decentralized platform for anonymous whistleblowing to combat corruption and protect those who speak truth to power.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <Link
-              to="/report"
-              className="btn-primary px-8 py-4 text-lg font-semibold rounded-xl hover:scale-105 transition-transform duration-300"
+      <section className="relative pt-40 pb-20 px-6 max-w-7xl mx-auto z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          
+          <div className="flex-1 space-y-8 text-center lg:text-left">
+            <motion.div
+              custom={0.1} initial="hidden" animate="visible" variants={variants}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-accent-bright text-sm font-semibold shadow-glass"
             >
-              Submit a Report
-            </Link>
-            <button type="button" className="btn-secondary px-8 py-4 text-lg font-semibold rounded-xl hover:scale-105 transition-transform duration-300">
-              Learn More
-            </button>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-bright opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-bright"></span>
+              </span>
+              Web3 Whistleblowing Protocol
+            </motion.div>
+
+            <motion.h1
+              custom={0.2} initial="hidden" animate="visible" variants={variants}
+              className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-white"
+            >
+              Speak Safely,<br/>
+              <span className="bg-gradient-to-r from-accent-mid to-accent-bright bg-[length:200%_auto] text-transparent bg-clip-text animate-shimmer">
+                Stay Secure.
+              </span>
+            </motion.h1>
+
+            <motion.p
+              custom={0.3} initial="hidden" animate="visible" variants={variants}
+              className="text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto lg:mx-0"
+            >
+              The decentralized protocol for anonymous whistleblowing. Expose corruption to a governed DAO while absolute cryptographic anonymity protects your identity.
+            </motion.p>
+
+            <motion.div
+              custom={0.4} initial="hidden" animate="visible" variants={variants}
+              className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
+            >
+              <Link to="/report" className="btn-primary text-lg">
+                Launch Protocol
+                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </Link>
+              <Link to="/whitepaper" className="btn-secondary text-lg">
+                Read Whitepaper
+              </Link>
+            </motion.div>
+          </div>
+
+          <motion.div 
+            custom={0.5} initial="hidden" animate="visible" variants={variants}
+            className="flex-1 w-full max-w-lg lg:max-w-none animate-float relative"
+          >
+             <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent z-10 pointer-events-none" />
+             <img 
+               src="/images/anonymous_whisperer.png" 
+               alt="A mysterious, anonymous person whispering securely, symbolizing safe whistleblowing." 
+               className="w-full h-auto object-cover rounded-3xl z-0 grayscale opacity-80"
+             />
           </motion.div>
+        
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
+      {/* Features Grid */}
+      <section className="relative py-24 px-6 z-10 bg-bg-secondary/30 border-y border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-3xl md:text-4xl font-bold text-center text-white mb-12"
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            Why Choose SpeakSafe?
-          </motion.h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Architecture of Trust</h2>
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">Engineered from the ground up for maximum security, zero-knowledge proofs, and decentralized immutable consensus.</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
-                className="glass-card p-8 text-center hover:scale-105 transition-transform duration-300"
+                custom={feature.delay}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={variants}
+                className="glass-card p-8 group"
               >
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-2xl">
+                <div className="w-14 h-14 rounded-xl bg-bg-accent flex items-center justify-center text-2xl mb-6 shadow-glass-inset border border-white/10 group-hover:border-accent-mid/50 transition-colors duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent-bright transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                <p className="text-text-secondary leading-relaxed text-sm">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.5 }}
-              className="glass-card p-10 hover:scale-105 transition-transform duration-300"
+      {/* Donation & Impact Section */}
+      <section className="relative py-24 px-6 z-10 border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
+            
+            <motion.div 
+               initial={{ opacity: 0, x: -40 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8 }}
+               className="flex-1 w-full max-w-md animate-float-slow"
             >
-              <div className="text-5xl font-bold mb-3 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
-                $0.01
-              </div>
-              <div className="text-gray-300 text-lg">Average gas fee on Polygon</div>
+              <img 
+                 src="/images/anonymous_report.png" 
+                 alt="Premium 3D art of an anonymous identity layered with data hashes." 
+                 className="w-full h-auto rounded-3xl shadow-glass border border-white/10 grayscale opacity-90"
+              />
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.7 }}
-              className="glass-card p-10 hover:scale-105 transition-transform duration-300"
+
+            <motion.div 
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex-1 space-y-6"
             >
-              <div className="text-5xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                100%
+              <h2 className="text-3xl md:text-5xl font-bold text-white pb-2 leading-tight">
+                Empower Truth.<br/>
+                <span className="text-accent-mid">Sponsor Gas Fees.</span>
+              </h2>
+              <p className="text-lg text-text-secondary leading-relaxed">
+                Cost should never be a barrier to justice. Many whistleblowers lack the crypto needed to cover blockchain gas fees. By sponsoring a report, you cover the transaction costs, enabling critical truths to be permanently secured.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-4 py-4">
+                <div className="glass-card p-5 border-l-4 border-l-accent-dark">
+                   <div className="text-3xl font-extrabold text-white mb-1">0.01 <span className="text-sm font-medium text-text-muted">MATIC</span></div>
+                   <div className="text-sm text-text-secondary">Average Gas Fee</div>
+                </div>
+                <div className="glass-card p-5 border-l-4 border-l-accent-mid">
+                   <div className="text-3xl font-extrabold text-white mb-1">100%</div>
+                   <div className="text-sm text-text-secondary">Anonymous Submissions</div>
+                </div>
               </div>
-              <div className="text-gray-300 text-lg">Anonymous reporting</div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.9 }}
-              className="glass-card p-10 hover:scale-105 transition-transform duration-300"
-            >
-              <div className="text-5xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">
-                ∞
+
+              <div className="pt-4 flex gap-4">
+                <Link to="/donate" className="btn-primary">
+                  Sponsor Tranasctions
+                </Link>
+                <Link to="/report" className="btn-ghost">
+                  Submit Free Report
+                </Link>
               </div>
-              <div className="text-gray-300 text-lg">Immutable records</div>
             </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* Donation Section */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.1 }}
-            className="glass-card p-8 bg-gradient-to-r from-purple-600/10 to-blue-600/10 border-purple-500/30"
-          >
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-purple-500/20 px-3 py-1 rounded-full mb-4">
-                  <span className="text-purple-300 text-sm font-medium">🤝 Community Powered</span>
-                </div>
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Help Others Report Without Barriers
-                </h2>
-                <p className="text-gray-300 mb-6">
-                  Many people want to expose corruption but can't afford crypto gas fees.
-                  Your donation sponsors anonymous reports for those who need it most.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/donate"
-                    className="btn-primary px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-transform duration-300 inline-flex items-center justify-center gap-2"
-                  >
-                    💜 Sponsor Reports
-                  </Link>
-                  <Link
-                    to="/report"
-                    className="btn-secondary px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-transform duration-300 inline-flex items-center justify-center"
-                  >
-                    Submit Free Report
-                  </Link>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl">
-                  <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
-                    <span className="text-green-400 font-bold">1</span>
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">1 MATIC = 7 Reports</div>
-                    <div className="text-gray-400 text-sm">Covers gas fees for 7 anonymous reports</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
-                    <span className="text-blue-400 font-bold">12K</span>
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">Reports Sponsored</div>
-                    <div className="text-gray-400 text-sm">By our amazing community</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
-                    <span className="text-purple-400 font-bold">∞</span>
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">Impact Created</div>
-                    <div className="text-gray-400 text-sm">Transparency for everyone</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+      {/* Impact Stats Section */}
+      <section className="relative py-20 px-6 z-10 bg-bg-tertiary/20 backdrop-blur-sm border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="text-4xl md:text-5xl font-extrabold text-white mb-2">{MARKETING_STATS.totalReports.toLocaleString()}+</div>
+              <div className="text-accent-mid font-semibold uppercase tracking-wider text-sm">Reports Submitted</div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="text-4xl md:text-5xl font-extrabold text-white mb-2">{MARKETING_STATS.resolvedReports.toLocaleString()}+</div>
+              <div className="text-accent-mid font-semibold uppercase tracking-wider text-sm">Resolved Cases</div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="text-4xl md:text-5xl font-extrabold text-white mb-2">{MARKETING_STATS.totalDonations}</div>
+              <div className="text-accent-mid font-semibold uppercase tracking-wider text-sm">Donations Received</div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="text-4xl md:text-5xl font-extrabold text-white mb-2">{MARKETING_STATS.activeMembers.toLocaleString()}+</div>
+              <div className="text-accent-mid font-semibold uppercase tracking-wider text-sm">DAO Members</div>
+            </motion.div>
+          </div>
+          <p className="text-center text-text-muted text-xs mt-12 italic">{MARKETING_STATS.disclaimer}</p>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-6">
+      <section className="relative py-24 px-6 z-10 mb-12">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.3 }}
-            className="frosted-glass p-12"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="frosted-glass p-12 md:p-16 relative overflow-hidden group"
           >
-            <h2 className="text-3xl font-bold text-white mb-6">Ready to Make a Difference?</h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Join thousands of whistleblowers who trust SpeakSafe to protect their identity while exposing corruption.
-            </p>
-            <Link
-              to="/report"
-              className="btn-primary px-8 py-4 text-xl font-semibold rounded-xl hover:scale-105 transition-transform duration-300 inline-block"
-            >
-              Start Reporting Now
-            </Link>
+            <div className="absolute inset-0 bg-gradient-to-r from-bg-accent/30 to-bg-tertiary/30 group-hover:from-bg-accent/50 group-hover:to-bg-tertiary/50 transition-colors duration-500" />
+            
+            <div className="relative z-10">
+              <h2 className="text-4xl font-bold text-white mb-6">Take Action Securely</h2>
+              <p className="text-xl text-text-secondary mb-10 max-w-2xl mx-auto">
+                Ready to expose critical vulnerabilities or corruption? Our protocol guarantees your privacy through mathematics, not promises.
+              </p>
+              <Link
+                to="/report"
+                className="btn-primary text-xl px-10 py-5"
+              >
+                Access Reporting Interface
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-white/10">
-        <div className="max-w-6xl mx-auto text-center text-gray-400">
-          <p>&copy; 2024 SpeakSafe. Empowering anonymous whistleblowing for a transparent world.</p>
-          <div className="mt-4 space-x-6">
-            <button type="button" className="hover:text-white transition-colors">Privacy Policy</button>
-            <button type="button" className="hover:text-white transition-colors">Terms of Service</button>
-            <button type="button" className="hover:text-white transition-colors">Contact</button>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

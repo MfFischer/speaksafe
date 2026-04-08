@@ -36,7 +36,7 @@ const ContactPage: React.FC = () => {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 flex items-center justify-center px-6">
+      <div className="min-h-screen bg-transparent flex items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -60,21 +60,21 @@ const ContactPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       {/* Header */}
-      <header className="bg-gray-900/90 backdrop-blur-sm border-b border-purple-500/30 sticky top-0 z-50">
+      <header className="bg-gray-900/90 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <Link to="/" className="text-2xl font-bold text-accent-bright bg-clip-text text-transparent">
               SpeakSafe
             </Link>
             <nav className="hidden md:flex space-x-8">
-              <Link to="/" className="text-white hover:text-purple-300 transition-colors font-medium">Home</Link>
-              <Link to="/report" className="text-white hover:text-purple-300 transition-colors font-medium">Report</Link>
-              <Link to="/dao" className="text-white hover:text-purple-300 transition-colors font-medium">DAO</Link>
-              <Link to="/donate" className="text-white hover:text-purple-300 transition-colors font-medium">Donate</Link>
-              <Link to="/faq" className="text-white hover:text-purple-300 transition-colors font-medium">FAQ</Link>
-              <Link to="/contact" className="text-white hover:text-purple-300 transition-colors font-semibold">Contact</Link>
+              <Link to="/" className="text-white hover:text-text-primary transition-colors font-medium">Home</Link>
+              <Link to="/report" className="text-white hover:text-text-primary transition-colors font-medium">Report</Link>
+              <Link to="/dao" className="text-white hover:text-text-primary transition-colors font-medium">DAO</Link>
+              <Link to="/donate" className="text-white hover:text-text-primary transition-colors font-medium">Donate</Link>
+              <Link to="/faq" className="text-white hover:text-text-primary transition-colors font-medium">FAQ</Link>
+              <Link to="/contact" className="text-white hover:text-text-primary transition-colors font-semibold">Contact</Link>
             </nav>
           </div>
         </div>
@@ -89,11 +89,11 @@ const ContactPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full mb-6">
-              <Mail className="w-5 h-5 text-purple-300" />
-              <span className="text-purple-300 font-medium">Get in Touch</span>
+            <div className="inline-flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full mb-6">
+              <Mail className="w-5 h-5 text-text-primary" />
+              <span className="text-text-primary font-medium">Get in Touch</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white bg-clip-text text-transparent">
               Contact Support
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -114,7 +114,7 @@ const ContactPage: React.FC = () => {
                 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-purple-400" />
+                    <Mail className="w-5 h-5 text-accent-bright" />
                     <div>
                       <div className="text-white font-medium">Email Support</div>
                       <div className="text-gray-400 text-sm">support@speaksafe.org</div>
@@ -122,7 +122,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-purple-400" />
+                    <Clock className="w-5 h-5 text-accent-bright" />
                     <div>
                       <div className="text-white font-medium">Response Time</div>
                       <div className="text-gray-400 text-sm">Within 24 hours</div>
@@ -130,7 +130,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-purple-400" />
+                    <Shield className="w-5 h-5 text-accent-bright" />
                     <div>
                       <div className="text-white font-medium">Privacy</div>
                       <div className="text-gray-400 text-sm">All communications encrypted</div>
@@ -142,16 +142,16 @@ const ContactPage: React.FC = () => {
               <div className="glass-card p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">Quick Help</h3>
                 <div className="space-y-3">
-                  <Link to="/faq" className="block text-purple-300 hover:text-purple-200 transition-colors">
+                  <Link to="/faq" className="block text-text-primary hover:text-text-primary transition-colors">
                     → Frequently Asked Questions
                   </Link>
-                  <Link to="/how-it-works" className="block text-purple-300 hover:text-purple-200 transition-colors">
+                  <Link to="/how-it-works" className="block text-text-primary hover:text-text-primary transition-colors">
                     → How SpeakSafe Works
                   </Link>
-                  <Link to="/privacy-policy" className="block text-purple-300 hover:text-purple-200 transition-colors">
+                  <Link to="/privacy-policy" className="block text-text-primary hover:text-text-primary transition-colors">
                     → Privacy Policy
                   </Link>
-                  <Link to="/legal-disclaimer" className="block text-purple-300 hover:text-purple-200 transition-colors">
+                  <Link to="/legal-disclaimer" className="block text-text-primary hover:text-text-primary transition-colors">
                     → Legal Information
                   </Link>
                 </div>
@@ -180,7 +180,7 @@ const ContactPage: React.FC = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none"
+                        className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white placeholder-gray-400 focus:border-accent-mid focus:outline-none"
                         placeholder="Your name"
                       />
                     </div>
@@ -196,7 +196,7 @@ const ContactPage: React.FC = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none"
+                        className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white placeholder-gray-400 focus:border-accent-mid focus:outline-none"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -212,7 +212,7 @@ const ContactPage: React.FC = () => {
                         name="category"
                         value={formData.category}
                         onChange={handleChange}
-                        className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white focus:border-purple-500 focus:outline-none"
+                        className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white focus:border-accent-mid focus:outline-none"
                       >
                         <option value="general">General Support</option>
                         <option value="technical">Technical Issue</option>
@@ -234,7 +234,7 @@ const ContactPage: React.FC = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none"
+                        className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white placeholder-gray-400 focus:border-accent-mid focus:outline-none"
                         placeholder="Brief description of your inquiry"
                       />
                     </div>
@@ -251,7 +251,7 @@ const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none resize-vertical"
+                      className="w-full p-3 rounded-lg bg-gray-800/50 border border-gray-600 text-white placeholder-gray-400 focus:border-accent-mid focus:outline-none resize-vertical"
                       placeholder="Please provide as much detail as possible..."
                     />
                   </div>
@@ -263,7 +263,7 @@ const ContactPage: React.FC = () => {
                       name="urgent"
                       checked={formData.urgent}
                       onChange={handleChange}
-                      className="w-4 h-4 text-purple-600 bg-gray-800 border-gray-600 rounded focus:ring-purple-500"
+                      className="w-4 h-4 text-accent-bright bg-gray-800 border-gray-600 rounded focus:ring-accent-mid"
                     />
                     <label htmlFor="urgent" className="text-gray-300 flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 text-orange-400" />
@@ -271,8 +271,8 @@ const ContactPage: React.FC = () => {
                     </label>
                   </div>
 
-                  <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
-                    <p className="text-blue-200 text-sm">
+                  <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                    <p className="text-text-primary text-sm">
                       <Shield className="w-4 h-4 inline mr-2" />
                       Your message will be encrypted and handled confidentially. We never share your information with third parties.
                     </p>

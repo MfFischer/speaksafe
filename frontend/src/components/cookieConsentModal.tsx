@@ -60,14 +60,14 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
             <div className="text-2xl">🍪</div>
             <div>
               <h3 className="text-lg font-semibold text-white">Cookie Preferences</h3>
-              <p className="text-blue-100 text-sm">
+              <p className="text-text-primary text-sm">
                 We use cookies to enhance your experience and protect your privacy.
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="text-white hover:text-blue-200 text-xl"
+            className="text-white hover:text-text-primary text-xl"
           >
             ×
           </button>
@@ -75,7 +75,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
 
         {!showDetails ? (
           <div className="space-y-4">
-            <p className="text-blue-100 text-sm">
+            <p className="text-text-primary text-sm">
               SpeakSafe uses essential cookies for security and functionality, plus optional cookies 
               to improve your experience. Your privacy and anonymity remain protected regardless of your choice.
             </p>
@@ -95,7 +95,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
               </button>
               <button
                 onClick={() => setShowDetails(true)}
-                className="text-blue-100 hover:text-white px-6 py-2 text-sm font-semibold"
+                className="text-text-primary hover:text-white px-6 py-2 text-sm font-semibold"
               >
                 Customize
               </button>
@@ -110,10 +110,10 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
                   <h4 className="font-semibold text-white">Essential Cookies</h4>
                   <div className="text-green-400 text-sm font-semibold">Always On</div>
                 </div>
-                <p className="text-blue-100 text-sm mb-2">
+                <p className="text-text-primary text-sm mb-2">
                   Required for basic functionality, security, and anonymous reporting.
                 </p>
-                <ul className="text-blue-100 text-xs space-y-1">
+                <ul className="text-text-primary text-xs space-y-1">
                   <li>• Session management</li>
                   <li>• Security tokens</li>
                   <li>• Form data protection</li>
@@ -131,13 +131,13 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
                       onChange={(e) => setCustomConsent(prev => ({ ...prev, functional: e.target.checked }))}
                       className="sr-only peer"
                     />
-                    <div className="w-9 h-5 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+                    <div className="w-9 h-5 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-accent-mid"></div>
                   </label>
                 </div>
-                <p className="text-blue-100 text-sm mb-2">
+                <p className="text-text-primary text-sm mb-2">
                   Remember your preferences and settings.
                 </p>
-                <ul className="text-blue-100 text-xs space-y-1">
+                <ul className="text-text-primary text-xs space-y-1">
                   <li>• Language preferences</li>
                   <li>• UI customizations</li>
                   <li>• Privacy settings</li>
@@ -155,13 +155,13 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
                       onChange={(e) => setCustomConsent(prev => ({ ...prev, analytics: e.target.checked }))}
                       className="sr-only peer"
                     />
-                    <div className="w-9 h-5 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+                    <div className="w-9 h-5 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-accent-mid"></div>
                   </label>
                 </div>
-                <p className="text-blue-100 text-sm mb-2">
+                <p className="text-text-primary text-sm mb-2">
                   Anonymous usage data to improve the platform.
                 </p>
-                <ul className="text-blue-100 text-xs space-y-1">
+                <ul className="text-text-primary text-xs space-y-1">
                   <li>• Page views (anonymous)</li>
                   <li>• Feature usage</li>
                   <li>• Performance metrics</li>
@@ -174,10 +174,10 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
                   <h4 className="font-semibold text-white">Marketing Cookies</h4>
                   <div className="text-gray-400 text-sm font-semibold">Not Used</div>
                 </div>
-                <p className="text-blue-100 text-sm mb-2">
+                <p className="text-text-primary text-sm mb-2">
                   SpeakSafe does not use marketing or tracking cookies.
                 </p>
-                <ul className="text-blue-100 text-xs space-y-1">
+                <ul className="text-text-primary text-xs space-y-1">
                   <li>• No advertising tracking</li>
                   <li>• No third-party marketing</li>
                   <li>• No behavioral profiling</li>
@@ -185,7 +185,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
               </div>
             </div>
 
-            <div className="border-t border-blue-400/20 pt-4">
+            <div className="border-t border-white/10 pt-4">
               <div className="flex flex-wrap gap-3 justify-center">
                 <button
                   onClick={handleAcceptSelected}
@@ -201,7 +201,7 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
                 </button>
                 <button
                   onClick={() => setShowDetails(false)}
-                  className="text-blue-100 hover:text-white px-6 py-2 text-sm font-semibold"
+                  className="text-text-primary hover:text-white px-6 py-2 text-sm font-semibold"
                 >
                   Back
                 </button>
@@ -209,9 +209,9 @@ const CookieConsentModal: React.FC<CookieConsentModalProps> = ({ isOpen, onClose
             </div>
 
             <div className="text-center">
-              <p className="text-blue-100 text-xs">
+              <p className="text-text-primary text-xs">
                 You can change these preferences anytime in Settings.
-                <button className="text-blue-300 hover:text-blue-100 ml-1">Learn more about our privacy practices</button>
+                <button className="text-text-primary hover:text-text-primary ml-1">Learn more about our privacy practices</button>
               </p>
             </div>
           </div>

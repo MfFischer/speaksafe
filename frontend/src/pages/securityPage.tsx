@@ -6,7 +6,7 @@ import Header from '../components/layout/Header';
 const SecurityPage: React.FC = () => {
   const securityFeatures = [
     {
-      icon: <Shield className="w-8 h-8 text-blue-400" />,
+      icon: <Shield className="w-8 h-8 text-accent-bright" />,
       title: "Zero-Knowledge Proofs",
       description: "Mathematical proofs that verify information without revealing the actual data, ensuring complete anonymity."
     },
@@ -16,7 +16,7 @@ const SecurityPage: React.FC = () => {
       description: "All data is encrypted before transmission and remains encrypted throughout the entire process."
     },
     {
-      icon: <Server className="w-8 h-8 text-purple-400" />,
+      icon: <Server className="w-8 h-8 text-accent-bright" />,
       title: "Blockchain Immutability",
       description: "Reports are stored on decentralized blockchain networks, making them tamper-proof and permanent."
     },
@@ -38,7 +38,7 @@ const SecurityPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       <Header />
       
       <div className="container mx-auto px-4 py-24">
@@ -54,9 +54,9 @@ const SecurityPage: React.FC = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center justify-center w-20 h-20 bg-blue-600/20 rounded-full mb-8"
+              className="inline-flex items-center justify-center w-20 h-20 bg-white/5 rounded-full mb-8"
             >
-              <Shield className="w-10 h-10 text-blue-400" />
+              <Shield className="w-10 h-10 text-accent-bright" />
             </motion.div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Security & Privacy
@@ -149,18 +149,18 @@ const SecurityPage: React.FC = () => {
               className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8"
             >
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                <Server className="w-8 h-8 text-purple-400" />
+                <Server className="w-8 h-8 text-accent-bright" />
                 Technical Architecture
               </h2>
               <div className="space-y-6">
-                <div className="bg-purple-600/10 rounded-xl p-6 border border-purple-500/20">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl font-bold text-white mb-3">Blockchain Layer</h3>
                   <p className="text-gray-300">
                     Reports are stored on multiple blockchain networks (Polygon, Ethereum) ensuring decentralization, 
                     immutability, and resistance to censorship. Smart contracts handle verification without exposing sensitive data.
                   </p>
                 </div>
-                <div className="bg-blue-600/10 rounded-xl p-6 border border-blue-500/20">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl font-bold text-white mb-3">Zero-Knowledge Protocol</h3>
                   <p className="text-gray-300">
                     We use advanced zk-SNARKs (Zero-Knowledge Succinct Non-Interactive Arguments of Knowledge) to prove 
@@ -185,7 +185,7 @@ const SecurityPage: React.FC = () => {
               className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8"
             >
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                <Globe className="w-8 h-8 text-blue-400" />
+                <Globe className="w-8 h-8 text-accent-bright" />
                 Our Privacy Guarantees
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
@@ -200,7 +200,7 @@ const SecurityPage: React.FC = () => {
                   </ul>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-blue-400">What We Protect</h3>
+                  <h3 className="text-xl font-bold text-accent-bright">What We Protect</h3>
                   <ul className="space-y-2 text-gray-300">
                     <li>• Complete anonymity of reporters</li>
                     <li>• Confidentiality of report contents</li>
@@ -231,11 +231,11 @@ const SecurityPage: React.FC = () => {
                     <div className="text-sm">Type II Compliant</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-400 mb-2">ISO 27001</div>
+                    <div className="text-2xl font-bold text-accent-bright mb-2">ISO 27001</div>
                     <div className="text-sm">Certified</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400 mb-2">GDPR</div>
+                    <div className="text-2xl font-bold text-accent-bright mb-2">GDPR</div>
                     <div className="text-sm">Fully Compliant</div>
                   </div>
                 </div>

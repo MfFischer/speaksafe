@@ -85,13 +85,13 @@ const EduModal: React.FC<EduModalProps> = ({ isOpen, onClose, region = 'general'
           <h2 className="text-2xl font-bold text-white">{content.title}</h2>
           <button
             onClick={onClose}
-            className="text-white hover:text-blue-200 text-2xl font-bold"
+            className="text-white hover:text-text-primary text-2xl font-bold"
           >
             ×
           </button>
         </div>
 
-        <div className="space-y-6 text-blue-100">
+        <div className="space-y-6 text-text-primary">
           {/* Introduction */}
           <div className="frosted-glass p-4">
             <h3 className="font-semibold text-white mb-3">🛡️ Why Whistleblowing Matters</h3>
@@ -108,7 +108,7 @@ const EduModal: React.FC<EduModalProps> = ({ isOpen, onClose, region = 'general'
             <ul className="text-sm space-y-2">
               {content.laws.map((law, index) => (
                 <li key={index} className="flex items-start space-x-2">
-                  <span className="text-blue-300 mt-1">•</span>
+                  <span className="text-text-primary mt-1">•</span>
                   <span>{law}</span>
                 </li>
               ))}

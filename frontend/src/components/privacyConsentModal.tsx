@@ -73,7 +73,7 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
       <div className="frosted-glass max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 modal-enter">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-white">Privacy & Data Consent</h2>
-          <div className="text-blue-100 text-sm">
+          <div className="text-text-primary text-sm">
             Step {currentStep} of {totalSteps}
           </div>
         </div>
@@ -86,7 +86,7 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
               <h3 className="text-xl font-semibold text-white mb-4">
                 Your Privacy is Our Priority
               </h3>
-              <p className="text-blue-100">
+              <p className="text-text-primary">
                 SpeakSafe is designed to protect whistleblowers. We need your consent 
                 to process data necessary for the platform to function while keeping 
                 you anonymous and secure.
@@ -95,7 +95,7 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
 
             <div className="frosted-glass p-4">
               <h4 className="font-semibold text-white mb-3">What Makes SpeakSafe Different:</h4>
-              <ul className="text-blue-100 text-sm space-y-2">
+              <ul className="text-text-primary text-sm space-y-2">
                 <li className="flex items-start space-x-2">
                   <span className="text-green-400 mt-1">✓</span>
                   <span>Zero-knowledge proofs protect your identity</span>
@@ -136,10 +136,10 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
             <div className="space-y-4">
               <div className="frosted-glass p-4">
                 <h4 className="font-semibold text-white mb-2">Essential Data Processing (Required)</h4>
-                <p className="text-blue-100 text-sm mb-3">
+                <p className="text-text-primary text-sm mb-3">
                   Required for basic platform functionality and security.
                 </p>
-                <ul className="text-blue-100 text-sm space-y-1">
+                <ul className="text-text-primary text-sm space-y-1">
                   <li>• Report content encryption and storage</li>
                   <li>• Blockchain hash generation and storage</li>
                   <li>• Zero-knowledge proof generation</li>
@@ -161,10 +161,10 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
 
               <div className="frosted-glass p-4">
                 <h4 className="font-semibold text-white mb-2">Cookies and Local Storage (Optional)</h4>
-                <p className="text-blue-100 text-sm mb-3">
+                <p className="text-text-primary text-sm mb-3">
                   Used to remember your preferences and improve user experience.
                 </p>
-                <ul className="text-blue-100 text-sm space-y-1">
+                <ul className="text-text-primary text-sm space-y-1">
                   <li>• User interface preferences</li>
                   <li>• Language and region settings</li>
                   <li>• Session management</li>
@@ -186,10 +186,10 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
 
               <div className="frosted-glass p-4">
                 <h4 className="font-semibold text-white mb-2">Analytics and Improvement (Optional)</h4>
-                <p className="text-blue-100 text-sm mb-3">
+                <p className="text-text-primary text-sm mb-3">
                   Anonymous usage data to help us improve the platform.
                 </p>
-                <ul className="text-blue-100 text-sm space-y-1">
+                <ul className="text-text-primary text-sm space-y-1">
                   <li>• Anonymous usage statistics</li>
                   <li>• Performance monitoring</li>
                   <li>• Feature usage analytics</li>
@@ -238,19 +238,19 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
               <h4 className="font-semibold text-white mb-3">Your Consent Summary:</h4>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between items-center">
-                  <span className="text-blue-100">Essential Data Processing:</span>
+                  <span className="text-text-primary">Essential Data Processing:</span>
                   <span className={consent.dataProcessing ? 'text-green-400' : 'text-red-400'}>
                     {consent.dataProcessing ? 'Accepted' : 'Required'}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-blue-100">Cookies & Local Storage:</span>
+                  <span className="text-text-primary">Cookies & Local Storage:</span>
                   <span className={consent.cookies ? 'text-green-400' : 'text-gray-400'}>
                     {consent.cookies ? 'Accepted' : 'Declined'}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-blue-100">Analytics:</span>
+                  <span className="text-text-primary">Analytics:</span>
                   <span className={consent.analytics ? 'text-green-400' : 'text-gray-400'}>
                     {consent.analytics ? 'Accepted' : 'Declined'}
                   </span>
@@ -258,9 +258,9 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
               </div>
             </div>
 
-            <div className="frosted-glass p-4 border border-blue-400/30">
+            <div className="frosted-glass p-4 border border-white/10">
               <h4 className="font-semibold text-white mb-2">Your Rights:</h4>
-              <ul className="text-blue-100 text-sm space-y-1">
+              <ul className="text-text-primary text-sm space-y-1">
                 <li>• You can change these preferences anytime in Settings</li>
                 <li>• You can request data deletion at any time</li>
                 <li>• You can export your data anytime</li>
@@ -284,7 +284,7 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
               </button>
               <button
                 onClick={handleRejectAll}
-                className="text-blue-100 hover:text-white py-2 text-sm"
+                className="text-text-primary hover:text-white py-2 text-sm"
               >
                 Use Essential Only
               </button>
@@ -293,7 +293,7 @@ const PrivacyConsentModal: React.FC<PrivacyConsentModalProps> = ({
             <div className="text-center">
               <button
                 onClick={() => setCurrentStep(2)}
-                className="text-blue-300 hover:text-blue-100 text-sm"
+                className="text-text-primary hover:text-text-primary text-sm"
               >
                 ← Back to modify choices
               </button>

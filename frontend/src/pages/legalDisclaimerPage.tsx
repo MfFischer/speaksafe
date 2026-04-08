@@ -5,7 +5,7 @@ import Header from '../components/layout/Header';
 
 const LegalDisclaimerPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       <Header />
       
       <div className="container mx-auto px-4 py-24">
@@ -42,7 +42,7 @@ const LegalDisclaimerPage: React.FC = () => {
             {/* General Disclaimer */}
             <section>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <Info className="w-6 h-6 text-blue-400" />
+                <Info className="w-6 h-6 text-accent-bright" />
                 General Disclaimer
               </h2>
               <div className="text-gray-300 space-y-4">
@@ -58,7 +58,7 @@ const LegalDisclaimerPage: React.FC = () => {
             {/* Platform Limitations */}
             <section>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <Shield className="w-6 h-6 text-purple-400" />
+                <Shield className="w-6 h-6 text-accent-bright" />
                 Platform Limitations
               </h2>
               <div className="text-gray-300 space-y-4">
@@ -100,7 +100,7 @@ const LegalDisclaimerPage: React.FC = () => {
             {/* Accuracy of Information */}
             <section>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <FileText className="w-6 h-6 text-blue-400" />
+                <FileText className="w-6 h-6 text-accent-bright" />
                 Accuracy of Information
               </h2>
               <div className="text-gray-300 space-y-4">
@@ -120,7 +120,7 @@ const LegalDisclaimerPage: React.FC = () => {
             {/* Jurisdictional Limitations */}
             <section>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <Globe className="w-6 h-6 text-purple-400" />
+                <Globe className="w-6 h-6 text-accent-bright" />
                 Jurisdictional Limitations
               </h2>
               <div className="text-gray-300 space-y-4">

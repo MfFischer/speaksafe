@@ -5,7 +5,7 @@ import Header from '../components/layout/Header';
 
 const CookiePolicyPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       <Header />
       
       <div className="container mx-auto px-4 py-24">
@@ -58,7 +58,7 @@ const CookiePolicyPage: React.FC = () => {
             {/* Types of Cookies We Use */}
             <section>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <Settings className="w-6 h-6 text-blue-400" />
+                <Settings className="w-6 h-6 text-accent-bright" />
                 Types of Cookies We Use
               </h2>
               <div className="space-y-6">
@@ -81,9 +81,9 @@ const CookiePolicyPage: React.FC = () => {
                 </div>
 
                 {/* Analytics Cookies */}
-                <div className="bg-blue-600/10 rounded-xl p-6 border border-blue-500/20">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <BarChart3 className="w-5 h-5 text-blue-400" />
+                    <BarChart3 className="w-5 h-5 text-accent-bright" />
                     Analytics Cookies (Optional)
                   </h3>
                   <p className="text-gray-300 mb-3">
@@ -98,9 +98,9 @@ const CookiePolicyPage: React.FC = () => {
                 </div>
 
                 {/* Functional Cookies */}
-                <div className="bg-purple-600/10 rounded-xl p-6 border border-purple-500/20">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <Globe className="w-5 h-5 text-purple-400" />
+                    <Globe className="w-5 h-5 text-accent-bright" />
                     Functional Cookies (Optional)
                   </h3>
                   <p className="text-gray-300 mb-3">
@@ -139,7 +139,7 @@ const CookiePolicyPage: React.FC = () => {
             {/* Managing Your Cookie Preferences */}
             <section>
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <Settings className="w-6 h-6 text-blue-400" />
+                <Settings className="w-6 h-6 text-accent-bright" />
                 Managing Your Cookie Preferences
               </h2>
               <div className="text-gray-300 space-y-4">
@@ -147,7 +147,7 @@ const CookiePolicyPage: React.FC = () => {
                   You have full control over your cookie preferences:
                 </p>
                 
-                <div className="bg-blue-600/10 rounded-xl p-6 border border-blue-500/20">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h3 className="text-lg font-bold text-white mb-3">On SpeakSafe:</h3>
                   <ul className="list-disc list-inside space-y-2 text-gray-300 ml-4">
                     <li>Use our Cookie Consent banner to manage preferences</li>
@@ -156,7 +156,7 @@ const CookiePolicyPage: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="bg-purple-600/10 rounded-xl p-6 border border-purple-500/20">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h3 className="text-lg font-bold text-white mb-3">In Your Browser:</h3>
                   <ul className="list-disc list-inside space-y-2 text-gray-300 ml-4">
                     <li>Most browsers allow you to control cookies through settings</li>

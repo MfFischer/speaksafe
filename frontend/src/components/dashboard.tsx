@@ -13,6 +13,13 @@ import {
 } from 'lucide-react';
 import { Card, Button, Badge } from './ui';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import {
+  PLATFORM_STATS,
+  RECENT_REPORTS,
+  IMPACT_METRICS,
+  GLOBAL_COVERAGE,
+  getRealtimeStats
+} from '../data/mockData';
 
 interface ReportSummary {
   id: string;
@@ -40,65 +47,26 @@ const Dashboard: React.FC = () => {
   const [recentReports, setRecentReports] = useState<ReportSummary[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Mock data for charts
-  const activityData = [
-    { name: 'Jan', reports: 4, resolved: 2 },
-    { name: 'Feb', reports: 7, resolved: 5 },
-    { name: 'Mar', reports: 12, resolved: 8 },
-    { name: 'Apr', reports: 8, resolved: 6 },
-    { name: 'May', reports: 15, resolved: 12 },
-    { name: 'Jun', reports: 10, resolved: 8 }
-  ];
+  // Chart data — populated from real report data once the API is connected.
+  const activityData: { name: string; reports: number; resolved: number }[] = [];
 
-  const categoryData = [
-    { name: 'Corruption', value: 35, color: '#EF4444' },
-    { name: 'Misconduct', value: 25, color: '#F59E0B' },
-    { name: 'Environmental', value: 20, color: '#10B981' },
-    { name: 'Fraud', value: 20, color: '#3B82F6' }
-  ];
+  // Populated from real report data once the API is connected.
+  const categoryData: { name: string; value: number; color: string }[] = [];
 
   useEffect(() => {
-    // Simulate loading dashboard data
-    setTimeout(() => {
-      setStats({
-        totalReports: 12,
-        pendingReports: 3,
-        resolvedReports: 8,
-        tokensEarned: 450
-      });
-
-      setRecentReports([
-        {
-          id: '1',
-          title: 'Government Contract Irregularities',
-          status: 'under_review',
-          submittedAt: '2024-01-15',
-          category: 'Corruption'
-        },
-        {
-          id: '2',
-          title: 'Police Misconduct Report',
-          status: 'escalated',
-          submittedAt: '2024-01-12',
-          category: 'Law Enforcement'
-        },
-        {
-          id: '3',
-          title: 'Environmental Violation',
-          status: 'resolved',
-          submittedAt: '2024-01-10',
-          category: 'Environment'
-        }
-      ]);
-
-      setIsLoaded(true);
-    }, 1000);
+    // TODO: Replace with real API call — GET /api/dashboard/stats and /api/reports/my
+    // Example:
+    //   const { data } = await apiService.get('/dashboard/stats');
+    //   setStats(data);
+    //   const { data: reports } = await apiService.get('/reports/my');
+    //   setRecentReports(reports);
+    setIsLoaded(true);
   }, []);
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'pending': return 'text-yellow-400 bg-yellow-400/20';
-      case 'under_review': return 'text-blue-400 bg-blue-400/20';
+      case 'under_review': return 'text-accent-bright bg-white/5';
       case 'escalated': return 'text-orange-400 bg-orange-400/20';
       case 'resolved': return 'text-green-400 bg-green-400/20';
       default: return 'text-gray-400 bg-gray-400/20';
@@ -134,7 +102,7 @@ const Dashboard: React.FC = () => {
           transition={{ delay: 0.1 }}
         >
           <Card className="text-center hover:scale-105 transition-transform duration-300">
-            <FileText className="w-8 h-8 text-accent-primary mx-auto mb-3" />
+            <FileText className="w-8 h-8 text-accent-bright mx-auto mb-3" />
             <div className="text-3xl font-bold text-white mb-1">{stats.totalReports}</div>
             <div className="text-text-secondary text-sm">Total Reports</div>
           </Card>
@@ -187,7 +155,7 @@ const Dashboard: React.FC = () => {
         >
           <Card>
             <div className="flex items-center space-x-3 mb-6">
-              <Activity className="w-6 h-6 text-accent-primary" />
+              <Activity className="w-6 h-6 text-accent-bright" />
               <h3 className="text-xl font-semibold text-white">Report Activity</h3>
             </div>
             <div className="h-64">
@@ -219,7 +187,7 @@ const Dashboard: React.FC = () => {
         >
           <Card>
             <div className="flex items-center space-x-3 mb-6">
-              <TrendingUp className="w-6 h-6 text-accent-primary" />
+              <TrendingUp className="w-6 h-6 text-accent-bright" />
               <h3 className="text-xl font-semibold text-white">Report Categories</h3>
             </div>
             <div className="h-64">
@@ -254,7 +222,7 @@ const Dashboard: React.FC = () => {
         <Card>
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-3">
-              <FileText className="w-6 h-6 text-accent-primary" />
+              <FileText className="w-6 h-6 text-accent-bright" />
               <h3 className="text-xl font-semibold text-white">Recent Reports</h3>
             </div>
             <Button variant="ghost" size="sm">View All</Button>
@@ -308,7 +276,7 @@ const Dashboard: React.FC = () => {
       >
         <Card>
           <div className="flex items-center space-x-3 mb-6">
-            <AlertTriangle className="w-6 h-6 text-accent-primary" />
+            <AlertTriangle className="w-6 h-6 text-accent-bright" />
             <h3 className="text-xl font-semibold text-white">Quick Actions</h3>
           </div>
           <div className="grid md:grid-cols-3 gap-4">

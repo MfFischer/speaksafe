@@ -55,7 +55,7 @@ const SponsoredReportBanner: React.FC<SponsoredReportBannerProps> = ({
       className={`glass-card p-6 border-l-4 border-l-purple-500 ${className}`}
     >
       <div className="flex items-start gap-4">
-        <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+        <div className="w-12 h-12 bg-gradient-to-r from-accent-dark to-accent-mid rounded-full flex items-center justify-center flex-shrink-0">
           <Heart className="w-6 h-6 text-white" />
         </div>
         
@@ -78,7 +78,7 @@ const SponsoredReportBanner: React.FC<SponsoredReportBannerProps> = ({
           {/* Stats Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-blue-400" />
+              <Shield className="w-4 h-4 text-accent-bright" />
               <div>
                 <div className="text-white font-semibold text-sm">12,450</div>
                 <div className="text-gray-400 text-xs">Reports Sponsored</div>
@@ -86,7 +86,7 @@ const SponsoredReportBanner: React.FC<SponsoredReportBannerProps> = ({
             </div>
             
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-purple-400" />
+              <Users className="w-4 h-4 text-accent-bright" />
               <div>
                 <div className="text-white font-semibold text-sm">1,834</div>
                 <div className="text-gray-400 text-xs">Community Donors</div>

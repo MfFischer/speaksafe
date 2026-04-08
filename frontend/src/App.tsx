@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/homePage';
 import ReportPage from './pages/reportPage';
 import DaoPage from './pages/daoPage';
+import WhitepaperPage from './pages/whitepaperPage';
 import SettingsPage from './pages/settingsPage';
 import DonatePage from './pages/donatePage';
 import FAQPage from './pages/faqPage';
@@ -21,6 +22,7 @@ import PrivacyConsentModal from './components/privacyConsentModal';
 import LegalDisclaimer from './components/legalDisclaimer';
 import Chatbot from './components/Chatbot';
 import complianceService, { ConsentData } from './services/complianceService';
+import { Web3Provider } from './context/Web3Context';
 
 function App() {
   const [showCookieConsent, setShowCookieConsent] = useState(false);
@@ -60,16 +62,16 @@ function App() {
 
   if (!isInitialized) {
     return (
-      <div className="min-h-screen gradient-background-animated flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20"></div>
+      <div className="min-h-screen bg-mesh-gradient flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-bg-tertiary to-bg-secondary"></div>
         <div className="glass-card p-12 text-center max-w-md mx-4 relative z-10 animate-fade-in-up">
           <div className="mb-8">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center animate-pulse hover-glow">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-accent-dark to-accent-mid flex items-center justify-center animate-pulse hover-glow">
               <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clipRule="evenodd" />
               </svg>
             </div>
-            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-white to-accent-bright bg-clip-text text-transparent">
               SpeakSafe
             </h1>
             <p className="text-lg text-gray-300 mb-6">Initializing secure platform...</p>
@@ -98,36 +100,39 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/report" element={<ReportPage />} />
-          <Route path="/dao" element={<DaoPage />} />
-          <Route path="/donate" element={<DonatePage />} />
-          <Route path="/faq" element={<FAQPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/how-it-works" element={<HowItWorksPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
-          <Route path="/security" element={<SecurityPage />} />
-          <Route path="/legal-disclaimer" element={<LegalDisclaimerPage />} />
-          <Route path="/whistleblower-rights" element={<WhistleblowerRightsPage />} />
-          <Route path="/accessibility" element={<AccessibilityPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
-        </Routes>
+    <Web3Provider>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/report" element={<ReportPage />} />
+            <Route path="/dao" element={<DaoPage />} />
+            <Route path="/donate" element={<DonatePage />} />
+            <Route path="/whitepaper" element={<WhitepaperPage />} />
+            <Route path="/faq" element={<FAQPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/how-it-works" element={<HowItWorksPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+            <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+            <Route path="/security" element={<SecurityPage />} />
+            <Route path="/legal-disclaimer" element={<LegalDisclaimerPage />} />
+            <Route path="/whistleblower-rights" element={<WhistleblowerRightsPage />} />
+            <Route path="/accessibility" element={<AccessibilityPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
 
-        <CookieConsentModal
-          isOpen={showCookieConsent}
-          onClose={() => setShowCookieConsent(false)}
-        />
+          <CookieConsentModal
+            isOpen={showCookieConsent}
+            onClose={() => setShowCookieConsent(false)}
+          />
 
-        <Chatbot />
-      </div>
-    </Router>
+          <Chatbot />
+        </div>
+      </Router>
+    </Web3Provider>
   );
 }
 

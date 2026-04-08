@@ -93,21 +93,21 @@ const HowItWorksPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <div className="min-h-screen bg-transparent">
       {/* Header */}
-      <header className="bg-gray-900/90 backdrop-blur-sm border-b border-purple-500/30 sticky top-0 z-50">
+      <header className="bg-gray-900/90 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <Link to="/" className="text-2xl font-bold text-accent-bright bg-clip-text text-transparent">
               SpeakSafe
             </Link>
             <nav className="hidden md:flex space-x-8">
-              <Link to="/" className="text-white hover:text-purple-300 transition-colors font-medium">Home</Link>
-              <Link to="/report" className="text-white hover:text-purple-300 transition-colors font-medium">Report</Link>
-              <Link to="/dao" className="text-white hover:text-purple-300 transition-colors font-medium">DAO</Link>
-              <Link to="/donate" className="text-white hover:text-purple-300 transition-colors font-medium">Donate</Link>
-              <Link to="/faq" className="text-white hover:text-purple-300 transition-colors font-medium">FAQ</Link>
-              <Link to="/how-it-works" className="text-white hover:text-purple-300 transition-colors font-semibold">How It Works</Link>
+              <Link to="/" className="text-white hover:text-text-primary transition-colors font-medium">Home</Link>
+              <Link to="/report" className="text-white hover:text-text-primary transition-colors font-medium">Report</Link>
+              <Link to="/dao" className="text-white hover:text-text-primary transition-colors font-medium">DAO</Link>
+              <Link to="/donate" className="text-white hover:text-text-primary transition-colors font-medium">Donate</Link>
+              <Link to="/faq" className="text-white hover:text-text-primary transition-colors font-medium">FAQ</Link>
+              <Link to="/how-it-works" className="text-white hover:text-text-primary transition-colors font-semibold">How It Works</Link>
             </nav>
           </div>
         </div>
@@ -121,11 +121,11 @@ const HowItWorksPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full mb-6">
-              <Lightbulb className="w-5 h-5 text-purple-300" />
-              <span className="text-purple-300 font-medium">Simple & Secure</span>
+            <div className="inline-flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full mb-6">
+              <Lightbulb className="w-5 h-5 text-text-primary" />
+              <span className="text-text-primary font-medium">Simple & Secure</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white bg-clip-text text-transparent">
               How SpeakSafe Works
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -170,11 +170,11 @@ const HowItWorksPage: React.FC = () => {
                 onClick={() => setActiveStep(step.id)}
                 className={`flex items-center gap-3 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeStep === step.id
-                    ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30'
+                    ? 'bg-accent-mid text-white shadow-lg shadow-purple-600/30'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
                 }`}
               >
-                <div className={`p-2 rounded-full ${activeStep === step.id ? 'bg-white/20' : 'bg-purple-500/20'}`}>
+                <div className={`p-2 rounded-full ${activeStep === step.id ? 'bg-white/20' : 'bg-white/5'}`}>
                   {step.icon}
                 </div>
                 <span className="hidden sm:block">Step {step.id}: {step.title}</span>
@@ -194,11 +194,11 @@ const HowItWorksPage: React.FC = () => {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-purple-500/20 rounded-full text-purple-400">
+                  <div className="p-4 bg-white/5 rounded-full text-accent-bright">
                     {steps[activeStep - 1].icon}
                   </div>
                   <div>
-                    <div className="text-purple-300 text-sm font-medium">Step {activeStep}</div>
+                    <div className="text-text-primary text-sm font-medium">Step {activeStep}</div>
                     <h3 className="text-2xl font-bold text-white">{steps[activeStep - 1].title}</h3>
                   </div>
                 </div>
@@ -213,10 +213,10 @@ const HowItWorksPage: React.FC = () => {
                 </ul>
               </div>
               
-              <div className="bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-xl p-8 border border-purple-500/30">
+              <div className="bg-gradient-to-br from-bg-tertiary border-white/5 rounded-xl p-8 border border-white/10">
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <div className="text-purple-400 text-4xl">
+                  <div className="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="text-accent-bright text-4xl">
                       {steps[activeStep - 1].icon}
                     </div>
                   </div>
@@ -246,7 +246,7 @@ const HowItWorksPage: React.FC = () => {
                 <div
                   key={index}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index + 1 === activeStep ? 'bg-purple-500' : 'bg-gray-600'
+                    index + 1 === activeStep ? 'bg-accent-mid' : 'bg-gray-600'
                   }`}
                 />
               ))}
@@ -265,7 +265,7 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Key Features */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-600/10 to-blue-600/10">
+      <section className="py-20 px-6 bg-gradient-to-r from-bg-tertiary/50 to-bg-accent/50 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -286,8 +286,8 @@ const HowItWorksPage: React.FC = () => {
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                 className="glass-card p-6 text-center hover:scale-105 transition-transform duration-300"
               >
-                <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="text-purple-400">
+                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-accent-bright">
                     {feature.icon}
                   </div>
                 </div>

@@ -17,11 +17,11 @@ const ReportPage: React.FC = () => {
             className="text-center mb-12"
           >
             <div className="flex items-center justify-center space-x-3 mb-6">
-              <div className="p-3 bg-gradient-to-r from-accent-primary to-accent-tertiary rounded-xl">
+              <div className="p-3 bg-gradient-to-r from-accent-dark to-accent-mid rounded-xl">
                 <FileText className="w-8 h-8 text-white" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white">
-                Submit a Report
+              <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                Submit Report
               </h1>
             </div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
@@ -38,7 +38,7 @@ const ReportPage: React.FC = () => {
             className="grid md:grid-cols-3 gap-6 mb-12"
           >
             <Card className="text-center">
-              <Shield className="w-12 h-12 text-accent-primary mx-auto mb-4" />
+              <Shield className="w-12 h-12 text-accent-bright mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-white mb-2">Anonymous Protection</h3>
               <p className="text-text-secondary text-sm">
                 Zero-knowledge proofs ensure complete anonymity while maintaining report integrity
@@ -46,7 +46,7 @@ const ReportPage: React.FC = () => {
             </Card>
 
             <Card className="text-center">
-              <Lock className="w-12 h-12 text-accent-primary mx-auto mb-4" />
+              <Lock className="w-12 h-12 text-accent-bright mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-white mb-2">End-to-End Encryption</h3>
               <p className="text-text-secondary text-sm">
                 Military-grade encryption protects your data from unauthorized access
@@ -54,7 +54,7 @@ const ReportPage: React.FC = () => {
             </Card>
 
             <Card className="text-center">
-              <AlertTriangle className="w-12 h-12 text-accent-primary mx-auto mb-4" />
+              <AlertTriangle className="w-12 h-12 text-accent-bright mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-white mb-2">Immutable Storage</h3>
               <p className="text-text-secondary text-sm">
                 Blockchain technology ensures reports cannot be tampered with or deleted

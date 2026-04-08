@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Header from '../components/layout/Header';
 import DonationDashboard from '../components/donation/DonationDashboard';
 import DonationModal from '../components/donation/DonationModal';
 
@@ -12,22 +12,8 @@ const DonatePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
-      {/* Header */}
-      <header className="bg-gray-900/90 backdrop-blur-sm py-4 px-6 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link to="/" className="text-white text-2xl font-bold">
-            SpeakSafe
-          </Link>
-          <nav className="space-x-6">
-            <Link to="/" className="text-white hover:text-purple-300 transition-colors font-medium">Home</Link>
-            <Link to="/report" className="text-white hover:text-purple-300 transition-colors font-medium">Report</Link>
-            <Link to="/dao" className="text-white hover:text-purple-300 transition-colors font-medium">DAO</Link>
-            <Link to="/donate" className="text-white hover:text-purple-300 transition-colors font-semibold">Donate</Link>
-            <Link to="/settings" className="text-white hover:text-purple-300 transition-colors font-medium">Settings</Link>
-          </nav>
-        </div>
-      </header>
+    <div className="min-h-screen bg-transparent pt-16">
+      <Header />
 
       <div className="pt-8 pb-16 px-6">
         <div className="max-w-6xl mx-auto">
