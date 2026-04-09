@@ -96,7 +96,9 @@ class SpeakSafeServer {
 
     // Logging
     if (process.env.NODE_ENV !== 'test') {
-      this.app.use(morgan('combined', {
+      // Use privacy-safe format: method, url, status, content-length, response-time
+      // Excludes :remote-addr (IP address) for anonymity.
+      this.app.use(morgan(':method :url :status :res[content-length] - :response-time ms', {
         stream: { write: (message: string) => logger.info(message.trim()) }
       }));
     }

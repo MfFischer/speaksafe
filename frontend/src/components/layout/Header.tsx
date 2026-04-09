@@ -25,11 +25,16 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-gradient-to-r from-accent-dark to-accent-mid rounded-lg group-hover:scale-110 transition-transform duration-300">
-              <Shield className="h-6 w-6 text-white" />
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-white/10 shadow-glass group-hover:scale-110 transition-transform duration-500">
+              <img src="/logo-premium.png" alt="SpeakSafe Logo" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
             </div>
-            <span className="text-xl font-bold text-white tracking-tight">SpeakSafe</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-white tracking-widest uppercase">SpeakSafe</span>
+              <span className="text-[8px] font-bold text-accent-mid tracking-[0.3em] uppercase -mt-1 opacity-80">Network</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

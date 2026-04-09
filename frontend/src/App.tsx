@@ -65,21 +65,22 @@ function App() {
       <div className="min-h-screen bg-mesh-gradient flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-bg-tertiary to-bg-secondary"></div>
         <div className="glass-card p-12 text-center max-w-md mx-4 relative z-10 animate-fade-in-up">
-          <div className="mb-8">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-accent-dark to-accent-mid flex items-center justify-center animate-pulse hover-glow">
-              <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clipRule="evenodd" />
-              </svg>
+          <div className="mb-8 scale-in">
+            <div className="w-24 h-24 mx-auto mb-8 rounded-2xl overflow-hidden shadow-2xl border border-white/10 animate-float">
+              <img src="/logo-premium.png" alt="SpeakSafe Logo" className="w-full h-full object-cover" />
             </div>
-            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-white to-accent-bright bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold mb-3 tracking-tighter bg-gradient-to-r from-white via-accent-mid to-accent-bright bg-clip-text text-transparent">
               SpeakSafe
             </h1>
-            <p className="text-lg text-gray-300 mb-6">Initializing secure platform...</p>
-            <div className="loading-spinner mx-auto mb-4"></div>
-            <div className="loading-dots mx-auto">
-              <span></span>
-              <span></span>
-              <span></span>
+            <p className="text-sm font-semibold text-accent-mid uppercase tracking-[0.2em] mb-4">
+              The SpeakSafe Network
+            </p>
+            <p className="text-gray-400 text-sm italic mb-8 max-w-[250px] mx-auto leading-relaxed">
+              A decentralized infrastructure for the truth.
+            </p>
+            <div className="flex flex-col items-center">
+              <div className="loading-spinner mb-4 grayscale opacity-50"></div>
+              <p className="text-xs text-text-muted animate-pulse">Initializing encryption protocols...</p>
             </div>
           </div>
         </div>

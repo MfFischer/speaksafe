@@ -17,7 +17,7 @@ async function deriveKey(passphrase: string, salt: Uint8Array): Promise<CryptoKe
     ['deriveKey']
   );
   return crypto.subtle.deriveKey(
-    { name: 'PBKDF2', salt, iterations: 100_000, hash: 'SHA-256' },
+    { name: 'PBKDF2', salt: salt as any, iterations: 100_000, hash: 'SHA-256' } as any,
     keyMaterial,
     { name: 'AES-GCM', length: 256 },
     false,
@@ -39,9 +39,9 @@ async function encryptAESGCM(plaintext: string, passphrase: string): Promise<str
   const key  = await deriveKey(passphrase, salt);
 
   const ciphertext = await crypto.subtle.encrypt(
-    { name: 'AES-GCM', iv },
+    { name: 'AES-GCM', iv: iv as any },
     key,
-    enc.encode(plaintext)
+    enc.encode(plaintext) as any
   );
 
   // Pack: salt(16) + iv(12) + ciphertext
@@ -69,7 +69,7 @@ async function decryptAESGCM(packed64: string, passphrase: string): Promise<stri
   const ciphertext = packed.slice(28);
 
   const key = await deriveKey(passphrase, salt);
-  const plainBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext);
+  const plainBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv as any }, key, ciphertext as any);
 
   return new TextDecoder().decode(plainBuf);
 }
@@ -112,7 +112,7 @@ const web3Service = {
    * TODO: populate CONTRACT_ADDRESS from environment once deployed.
    */
   storeReportHash: async (reportHash: string, proof: any = null, signer?: any): Promise<void> => {
-    const contractAddress = '0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82';
+    const contractAddress = '0x9380dFE1c7BBB75FE26ce2727165ad647d8D6346';
     if (!contractAddress) {
       console.warn('Registry address is not set — skipping on-chain storage.');
       return;

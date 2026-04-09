@@ -57,14 +57,14 @@ const DaoPage: React.FC = () => {
     } as any);
   };
 
-  const marketingStats = {
-    activeMembers: Number(daoStats?.[1] || 0) || 3456,
-    totalProposals: Number(daoStats?.[0] || 0) || 142,
-    votesCast: Number(daoStats?.[2] || 0) || 18942,
-    treasuryBalance: daoStats ? formatEther(daoStats[3]) : '0'
+ const marketingStats = {
+    activeMembers: Number((daoStats as any)?.[1] || 0) || 3456,
+    totalProposals: Number((daoStats as any)?.[0] || 0) || 142,
+    votesCast: Number((daoStats as any)?.[2] || 0) || 18942,
+    treasuryBalance: daoStats ? formatEther((daoStats as any)[3]) : '0'
   };
 
-  const userTokens = tokenBalance ? parseFloat(formatEther(tokenBalance)) : 0;
+  const userTokens = tokenBalance ? parseFloat(formatEther(tokenBalance as any)) : 0;
 
   const mockProposals: Proposal[] = [
     {

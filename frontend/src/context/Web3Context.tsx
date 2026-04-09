@@ -4,15 +4,15 @@ import { mainnet, polygon, hardhat } from 'wagmi/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
 
-// 1. Get projectId at https://cloud.walletconnect.com
-const projectId = '8124505183864456982041865758084'; // Placeholder
+// 1. Get projectId at https://cloud.reown.com
+const projectId = '47145fc5c35a4d53d92fdfd63cf624ec'; 
 
 // 2. Create wagmiConfig
 const metadata = {
-  name: 'SpeakSafe',
+  name: 'SpeakSafe Network',
   description: 'Anonymous Whistleblowing Platform',
-  url: 'https://speaksafe.tech',
-  icons: ['https://speaksafe.tech/logo.png']
+  url: 'https://speaksafe.network',
+  icons: ['https://speaksafe.network/logo.png']
 };
 
 const chains = [mainnet, polygon, hardhat] as const;

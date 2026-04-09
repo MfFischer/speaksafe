@@ -1,0 +1,16 @@
+{
+  "network": {
+    "name": "polygon",
+    "chainId": "137"
+  },
+  "deployer": "0x633E3d98281525Ef51Fcda666023d839d4A1503c",
+  "contracts": {
+    "SpeakSafeRegistry": "0x9380dFE1c7BBB75FE26ce2727165ad647d8D6346",
+    "SpeakSafeTreasury": "0x0A0e1e3e6f8ae8463C57D7136AA4C114Dd867BF5",
+    "GovernanceToken": "0xe13C7e5336a379a84F636a06F0CeA789C1722352",
+    "TimelockController": "0xbA79e200329A489498D7df86e702586d46D952bc",
+    "SpeakSafeDAO": "0x81F2aABf8136B5B7A50Fa7B44009777d59bcf890"
+  },
+  "deploymentTime": "2026-04-09T07:15:29.205Z",
+  "gasUsed": {}
+}

@@ -1,138 +1,86 @@
-# 🛡️ SpeakSafe - Anonymous Whistleblowing Platform
+# 🛡️ SpeakSafe Network v2.0
 
+[![Domain: speaksafe.network](https://img.shields.io/badge/Domain-speaksafe.network-blue.svg)](https://speaksafe.network)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![React](https://img.shields.io/badge/React-19.0-blue.svg)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
-[![Blockchain](https://img.shields.io/badge/Blockchain-Polygon-purple.svg)](https://polygon.technology/)
+[![Privacy: Locked](https://img.shields.io/badge/Privacy-No_IP_Logging-green.svg)](#privacy-architecture)
+[![Stack: Web3](https://img.shields.io/badge/Stack-React_|_Node_|_Polygon_|_IPFS-gray.svg)](#-technology-stack)
 
-> **Empowering transparency through anonymous, blockchain-secured whistleblowing**
+> **"A decentralized infrastructure for the truth."**  
+> SpeakSafe is an anonymous, blockchain-secured whistleblowing platform designed to protect journalists, whistleblowers, and activists from retaliation while ensuring report integrity.
 
-SpeakSafe is a cutting-edge decentralized platform that enables individuals to report corruption, fraud, and misconduct safely and anonymously. Built with modern web technologies and blockchain infrastructure, it provides unprecedented protection for whistleblowers while ensuring report integrity and transparency.
+![SpeakSafe Hero](frontend/public/images/anonymous_whisperer.png)
 
-## 🌟 **Vision & Impact**
+## 🌐 **Live Platform**
+Access the decentralized reporting interface:  
+👉 **[https://speaksafe.network](https://speaksafe.network)**
 
-### The Problem
-- **Fear of Retaliation**: 67% of potential whistleblowers remain silent due to fear of consequences
-- **Lack of Trust**: Traditional reporting systems often compromise anonymity
-- **Global Corruption**: $2.6 trillion lost annually to corruption worldwide
-- **Accessibility Barriers**: Existing platforms exclude non-technical users
+---
 
-### Our Solution
-SpeakSafe combines **blockchain technology**, **zero-knowledge proofs**, and **community governance** to create a truly secure, anonymous, and accessible whistleblowing platform that protects reporters while ensuring accountability.
+## 🔒 **Privacy & Anonymity Architecture**
+
+SpeakSafe follows a **Zero-Knowledge, Zero-Trails** philosophy.
+
+- **Non-Custodial Identity**: No email, name, or phone number required. Connect via [Reown/WalletConnect](https://reown.com) or submit completely anonymously.
+- **No Metadata Trails**: 
+    - **Backend Privacy**: Node.js logs are stripped of all requester IP addresses.
+    - **Nginx Stealth**: Access logging is disabled on the production VPS to prevent traffic metadata storage.
+- **ZKP Integration**: leveraging **Zero-Knowledge Proofs** (zk-SNARKs) to verify reporting eligibility without leaking identity.
+- **Immutable Evidence**: All documents are cryptographically hashed and stored on **IPFS**, with hashes anchored to the **Polygon** blockchain.
 
 ## 🚀 **Key Features**
 
-### 🔐 **Privacy & Security**
-- **Zero-Knowledge Proofs**: Report without revealing identity
-- **Blockchain Immutability**: Tamper-proof record keeping
-- **End-to-End Encryption**: Complete data protection
-- **Anonymous Wallet Integration**: No personal information required
-
-### 🌍 **Accessibility & Inclusion**
-- **Community Sponsorship**: Crypto-savvy users sponsor reports for non-technical users
-- **Multi-Language Support**: Global accessibility (planned)
-- **WCAG 2.1 Compliance**: Accessible to users with disabilities
-- **Mobile-First Design**: Works on any device
-
-### 🏛️ **Democratic Governance**
-- **DAO-Based Review**: Community-driven report validation
-- **Transparent Escalation**: Democratic decision-making process
-- **Reward System**: Incentivizes quality reporting
-- **Global Reach**: Serves users across all jurisdictions
+- **Anonymous Reporting**: Submit sensitive evidence without revealing your identity.
+- **Immutable Record Keeping**: Cryptographic proofs ensure that reports cannot be tampered with or deleted by centralized authorities.
+- **DAO Governance**: Community-driven oversight and report escalation managed by decentralized voting.
+- **Gas-less Sponsorship**: A built-in sponsorship system allows the community to cover the blockchain gas fees for whistleblowers in need.
 
 ## 🛠️ **Technology Stack**
 
 ### Frontend
-- **React 19** with TypeScript for type safety
-- **Tailwind CSS** for modern, responsive design
-- **Framer Motion** for smooth animations
-- **React Hook Form + Zod** for robust form validation
+- **Framework**: React 19 + TypeScript
+- **Styling**: Tailwind CSS (Premium Dark/Ash Aesthetic)
+- **Web3**: Reown (WalletConnect v3) + Wagmi + Viem
+- **Animations**: Framer Motion
 
-### Blockchain & Web3
-- **Polygon Network** for low-cost, fast transactions
-- **Zero-Knowledge Proofs** for anonymous authentication
-- **IPFS** for decentralized storage
-- **Smart Contracts** for DAO governance
+### Backend & Infrastructure
+- **Core**: Node.js + Express
+- **Database**: PostgreSQL (Prisma ORM)
+- **Caching**: Redis v7
+- **Storage**: IPFS (Decentralized Content-Addressing)
+- **Containerization**: Docker & Docker Compose
 
-### Security & Privacy
-- **End-to-End Encryption** for all communications
-- **Multi-Signature Wallets** for treasury management
-- **Audit Trail** for transparency without compromising anonymity
+## 📦 **Quick Start (Self-Hosting)**
 
-## 📊 **Current Status**
+SpeakSafe is designed for rapid deployment on any Ubuntu-based VPS.
 
-#### ✅ **Completed (Production Ready)**
-- [x] Modern, responsive frontend interface
-- [x] Complete user journey (report submission to DAO review)
-- [x] Professional donation system with community sponsorship
-- [x] **Smart contract suite deployed** (Registry, Treasury, Token, DAO)
-- [x] **Web3 Integration**: Real-time voting, stats, and donation hooks active
-- [x] **ZKP Basic Implementation**: Proof generation and on-chain storage
-- [x] **Whitepaper**: Detailed technical documentation integrated
-- [x] Comprehensive legal compliance framework
-- [x] Accessibility features and WCAG compliance roadmap
+### 1. Prerequisites
+- Docker & Docker Compose
+- Node.js 18+ (for local builds)
 
-### 🔄 **In Progress**
-- [ ] Backend API refinement and database migration
-- [ ] Wallet security hardening & hardware wallet support
-- [ ] IPFS integration for decentralized storage
-- [ ] ZK circuit optimization (Circom)
-
-### 📋 **Planned**
-- [ ] Mobile application development
-- [ ] Multi-language internationalization (Tagalog, Bahasa, etc.)
-- [ ] Advanced analytics and pattern detection
-
-
-
-## 🌐 **Live Demo**
-
-**Frontend Demo**: [Coming Soon - Vercel Deployment]
-
-Experience the complete user journey from anonymous report submission to community review and escalation.
-
-## 🤝 **Contributing**
-
-We welcome contributions from developers, security researchers, and anti-corruption advocates worldwide.
-
-### Development Setup
+### 2. Local Setup
 ```bash
-# Clone the repository
 git clone https://github.com/MfFischer/speaksafe.git
-cd speaksafe/frontend
-
-# Install dependencies
-npm install
-
-# Start development server
-npm start
+cd speaksafe
 ```
 
-### Areas for Contribution
-- **Smart Contract Development** (Solidity)
-- **Zero-Knowledge Proof Implementation** (Circom/snarkjs)
-- **Security Auditing** and penetration testing
-- **Accessibility Testing** and improvements
-- **Internationalization** and localization
+### 3. Production Deployment
+The production stack is pre-configured in `docker-compose.vps.yml`.
 
-## 📞 **Contact & Partnerships**
+```bash
+# Build and start the unified stack
+docker compose -f docker-compose.vps.yml up -d
+```
 
-**Seeking partnerships with:**
-- Anti-corruption organizations
-- Transparency advocacy groups
-- Blockchain development teams
-- Legal experts in whistleblower protection
-- Grant funding organizations
+## 📈 **Project Roadmap**
+- [x] **v1.0**: Core Smart Contracts & Proto-UI
+- [x] **v2.0**: Premium Rebranding, Unified VPS Deployment, Privacy Hardening (No IP Logs)
+- [ ] **v2.1**: ZK-Proof Circuit Optimizations
+- [ ] **v3.0**: Mobile-Native Anonymous App
 
-**Contact**: afefischer@gmail.com
-
-
-## 📄 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🤝 **Contact & Support**
+SpeakSafe is built for the global community. For grants, partnerships, or technical inquiries:
+- **Email**: afefischer@gmail.com
+- **Website**: [speaksafe.network](https://speaksafe.network)
 
 ---
-
-**"Your voice matters, your identity stays protected."**
-
-*SpeakSafe - Empowering transparency through technology*
+*SpeakSafe - Democratizing truth in an age of centralized control.*

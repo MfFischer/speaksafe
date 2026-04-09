@@ -60,47 +60,47 @@ const HomePage: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 px-6 max-w-7xl mx-auto z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           
           <div className="flex-1 space-y-8 text-center lg:text-left">
             <motion.div
               custom={0.1} initial="hidden" animate="visible" variants={variants}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-accent-bright text-sm font-semibold shadow-glass"
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-accent-mid/30 bg-accent-mid/10 text-accent-bright text-xs font-bold uppercase tracking-[0.2em] shadow-glass"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-bright opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-bright"></span>
               </span>
-              Web3 Whistleblowing Protocol
+              The Global Standard for Anonymous Accountability
             </motion.div>
 
             <motion.h1
               custom={0.2} initial="hidden" animate="visible" variants={variants}
-              className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-white"
+              className="text-6xl md:text-8xl font-black leading-tight tracking-tight text-white mb-2"
             >
               Speak Safely,<br/>
-              <span className="bg-gradient-to-r from-accent-mid to-accent-bright bg-[length:200%_auto] text-transparent bg-clip-text animate-shimmer">
-                Stay Secure.
+              <span className="bg-gradient-to-r from-accent-mid via-accent-bright to-white bg-[length:200%_auto] text-transparent bg-clip-text animate-shimmer italic px-4 ml-[-0.05em]">
+                Protect Truth.
               </span>
             </motion.h1>
 
             <motion.p
               custom={0.3} initial="hidden" animate="visible" variants={variants}
-              className="text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-xl md:text-2xl text-text-secondary leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium border-l-4 border-accent-mid pl-6"
             >
-              The decentralized protocol for anonymous whistleblowing. Expose corruption to a governed DAO while absolute cryptographic anonymity protects your identity.
+              SpeakSafe is a decentralized infrastructure designed to protect whistleblowers, journalists, and activists. Leveraging zero-knowledge proofs and IPFS, we ensure your voice is heard without risking your safety.
             </motion.p>
 
             <motion.div
               custom={0.4} initial="hidden" animate="visible" variants={variants}
               className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
             >
-              <Link to="/report" className="btn-primary text-lg">
-                Launch Protocol
+              <Link to="/report" className="btn-primary text-lg px-10">
+                Submit Report Anonymously
                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
               </Link>
-              <Link to="/whitepaper" className="btn-secondary text-lg">
-                Read Whitepaper
+              <Link to="/dao" className="btn-secondary text-lg px-10">
+                Explore Protocol
               </Link>
             </motion.div>
           </div>
@@ -120,6 +120,59 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Vision Section */}
+      <section className="relative py-24 px-6 z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold text-white">Trust, but verify with <br/><span className="text-accent-bright">Zero-Knowledge.</span></h2>
+              <p className="text-text-secondary text-lg leading-relaxed">
+                Traditional whistleblowing platforms rely on trust in the organization. SpeakSafe replaces trust with mathematics. Using ZK-SNARKs, we verify that you have the right to report without revealing a single byte of your identity.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Complete IP Masking & Meta-data Scrubbing",
+                  "Decentralized Storage via IPFS Protocols",
+                  "Immutable Evidence Trails on Polygon/Hardhat",
+                  "DAO-Governed Report Escalation"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/80">
+                    <div className="w-5 h-5 rounded-full bg-accent-mid/20 flex items-center justify-center border border-accent-mid/40">
+                      <svg className="w-3 h-3 text-accent-bright" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                    </div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="glass-card p-1 aspect-video relative group"
+            >
+              <div className="absolute inset-0 bg-accent-mid/10 group-hover:bg-accent-mid/20 transition-colors duration-500 rounded-2xl" />
+              <img 
+                src="/images/anonymous_whisperer.png" 
+                alt="Technical illustration of SpeakSafe architecture" 
+                className="w-full h-full object-cover rounded-2xl grayscale blur-[2px] hover:blur-none transition-all duration-700" 
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                 <div className="frosted-glass p-6 text-center max-w-xs">
+                    <div className="text-2xl font-bold text-white mb-2">100% Secure</div>
+                    <div className="text-xs text-text-secondary">All data is encrypted end-to-end and stored on decentralized nodes.</div>
+                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Grid */}
       <section className="relative py-24 px-6 z-10 bg-bg-secondary/30 border-y border-white/5">
         <div className="max-w-7xl mx-auto">
@@ -129,19 +182,39 @@ const HomePage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Architecture of Trust</h2>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">Engineered from the ground up for maximum security, zero-knowledge proofs, and decentralized immutable consensus.</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Architecture of Integrity</h2>
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">We solve the "Single Point of Failure" problem in traditional whistleblowing using a multi-layered cryptographic stack.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
+            {[
+              {
+                title: "Zero-Knowledge Proofs",
+                description: "Submit verified reports without revealing your wallet address or IP, guaranteed by Circuit-level privacy.",
+                icon: "🛡️"
+              },
+              {
+                title: "IPFS Content Addressing",
+                description: "Evidence files are hashed and distributed across thousands of nodes worldwide, making them un-deletable.",
+                icon: "📦"
+              },
+              {
+                title: "Decentralized DAO",
+                description: "Community-driven oversight ensures that high-impact reports are escalated without centralized censorship.",
+                icon: "⚖️"
+              },
+              {
+                title: "Gas-Less Submission",
+                description: "Sponsor-funded relayers allow whistleblowers to submit reports without needing to own crypto assets.",
+                icon: "⚡"
+              }
+            ].map((feature, index) => (
               <motion.div
                 key={index}
-                custom={feature.delay}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={variants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
                 className="glass-card p-8 group"
               >
                 <div className="w-14 h-14 rounded-xl bg-bg-accent flex items-center justify-center text-2xl mb-6 shadow-glass-inset border border-white/10 group-hover:border-accent-mid/50 transition-colors duration-300">
