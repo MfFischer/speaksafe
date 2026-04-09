@@ -35,27 +35,24 @@ const config: HardhatUserConfig = {
       chainId: 31337,
     },
     
-    mumbai: {
-      url: process.env.POLYGON_TESTNET_RPC_URL || "https://rpc-mumbai.maticvigil.com",
+    amoy: {
+      url: process.env.AMOY_RPC_URL || "https://rpc-amoy.polygon.technology",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
-      chainId: 80001,
-      gas: 6000000,
-      gasPrice: 10000000000, // 10 gwei
+      chainId: 80002,
     },
     
     polygon: {
-      url: process.env.POLYGON_RPC_URL || "https://polygon-rpc.com",
+      url: process.env.POLYGON_RPC_URL || "https://polygon.llamarpc.com",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 137,
-      gas: 6000000,
-      gasPrice: 30000000000, // 30 gwei
+      timeout: 120000, // 2 minutes
     },
   },
   
   etherscan: {
     apiKey: {
       polygon: process.env.POLYGONSCAN_API_KEY || "",
-      polygonMumbai: process.env.POLYGONSCAN_API_KEY || "",
+      polygonAmoy: process.env.POLYGONSCAN_API_KEY || "",
     },
   },
   
